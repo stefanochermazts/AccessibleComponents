@@ -1,0 +1,49 @@
+<!--
+  Component: Main Navigation (Responsive)
+  Version: 1.0.0
+  Last Updated: 2025-12-05
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Primary site navigation with mobile menu toggle
+  
+  ARIA Pattern: Disclosure (Menu Button)
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/
+  
+  Keyboard Navigation:
+  - Tab: Navigate through menu items
+  - Enter: Activate link
+  - Space: Toggle mobile menu (on button)
+  - Esc: Close mobile menu
+  
+  Required ARIA Attributes:
+  - aria-label: Descriptive label for navigation
+  - aria-expanded: Menu toggle state
+  - aria-controls: Links button to menu
+  
+  CSS Classes:
+  - .main-nav: Navigation container
+  - .mobile-menu-btn: Toggle button (hidden on desktop)
+  - .nav-list: Menu items list
+  - .nav-link: Individual links
+  
+  Dependencies:
+  - CSS: See assets/css/components.css (.main-nav, .mobile-menu-btn, .nav-list)
+  - JS: See assets/js/main.js (initMobileMenu() function)
+-->
+<nav class="main-nav" aria-label="Main menu">
+  <a href="#" class="nav-link" style="font-weight: 700; font-size: var(--fs-xl); color: var(--c-primary);">Accessible.</a>
+  
+  <button class="mobile-menu-btn" aria-expanded="false" aria-controls="main-menu" aria-label="Menu">
+    ☰
+  </button>
+
+  <ul id="main-menu" class="nav-list">
+    <li><a href="#navigation" class="nav-link">Navigation</a></li>
+    <li><a href="#form" class="nav-link">Forms</a></li>
+    <li><a href="#content" class="nav-link">Content</a></li>
+    <li><a href="#media" class="nav-link">Media</a></li>
+    <li><a href="#apg-components" class="nav-link">APG Components</a></li>
+    <li><a href="#tokens" class="btn btn-primary">Documentation</a></li>
+  </ul>
+</nav>
+

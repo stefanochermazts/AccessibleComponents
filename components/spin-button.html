@@ -1,0 +1,57 @@
+<!--
+  Component: Spinbutton (Numeric Input)
+  Version: 1.0.0
+  Last Updated: 2025-12-05
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Numeric input with increment/decrement buttons
+  
+  ARIA Pattern: Spinbutton
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/spinbutton/
+  
+  Keyboard Navigation:
+  - ↑: Increase value
+  - ↓: Decrease value
+  - PageUp: Large increase
+  - PageDown: Large decrease
+  - Home: Minimum value
+  - End: Maximum value
+  
+  Required ARIA Attributes:
+  - role="spinbutton": Value element
+  - aria-valuenow: Current value
+  - aria-valuemin: Minimum value
+  - aria-valuemax: Maximum value
+  - aria-labelledby: Links to label
+  - tabindex="0": Keyboard focusable
+  
+  Custom Data Attributes:
+  - data-step: Increment/decrement step size
+  
+  CSS Classes:
+  - .wcag-spinbutton-wrapper: Container
+  - .wcag-spinbutton: Spinbutton element
+  - .spinbutton-btn: Increment/decrement buttons
+  - .spinbutton-value: Value display (focusable)
+  
+  Dependencies:
+  - CSS: See assets/css/components.css (.wcag-spinbutton, .spinbutton-btn)
+  - JS: See assets/js/main.js (initSpinbuttons() function)
+-->
+<div class="wcag-spinbutton-wrapper">
+  <label id="spin1-label" class="form-label">Quantity</label>
+  <div class="wcag-spinbutton">
+    <button class="spinbutton-btn" data-action="decrement" aria-label="Decrease">−</button>
+    <span 
+      class="spinbutton-value" 
+      role="spinbutton" 
+      aria-labelledby="spin1-label"
+      aria-valuenow="5" 
+      aria-valuemin="0" 
+      aria-valuemax="10"
+      data-step="1"
+      tabindex="0"
+    >5</span>
+    <button class="spinbutton-btn" data-action="increment" aria-label="Increase">+</button>
+  </div>
+</div>

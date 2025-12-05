@@ -1,0 +1,57 @@
+<!--
+  Component: Accordion
+  Version: 1.0.0
+  Last Updated: 2025-12-05
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Vertically stacked expandable/collapsible content sections
+  
+  ARIA Pattern: Accordion
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/accordion/
+  
+  Keyboard Navigation:
+  - Tab: Move between accordion headers
+  - Enter/Space: Toggle accordion panel
+  
+  Required ARIA Attributes:
+  - aria-expanded="true|false": Panel open/closed state
+  - aria-controls: Links button to panel ID
+  
+  Required HTML Attributes:
+  - id: Unique panel identifier
+  - hidden: Hides collapsed panels
+  
+  CSS Classes:
+  - .accordion-item: Individual accordion item
+  - .accordion-header: Header container (h3)
+  - .accordion-panel: Expandable content panel
+  - .accordion-icon: Visual expand/collapse indicator
+  
+  Dependencies:
+  - CSS: See assets/css/components.css (.accordion-item, .accordion-header, .accordion-panel)
+  - JS: See assets/js/main.js (initAccordions() function)
+-->
+<div class="accordion-item">
+  <h3 class="accordion-header">
+    <button aria-expanded="false" aria-controls="acc-content-1">
+      <span>What is web accessibility?</span>
+      <span class="accordion-icon">▼</span>
+    </button>
+  </h3>
+  <div id="acc-content-1" class="accordion-panel" hidden>
+    <p>Web accessibility (a11y) is the inclusive practice of removing barriers that prevent interaction with, or access to, websites by people with disabilities.</p>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <h3 class="accordion-header">
+    <button aria-expanded="false" aria-controls="acc-content-2">
+      <span>What are the levels?</span>
+      <span class="accordion-icon">▼</span>
+    </button>
+  </h3>
+  <div id="acc-content-2" class="accordion-panel" hidden>
+    <p>The levels are A (minimum), AA (legal/global standard), and AAA (maximum). This system targets level AA.</p>
+  </div>
+</div>
+

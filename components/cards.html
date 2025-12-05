@@ -1,0 +1,46 @@
+<!--
+  Component: Cards (Clickable)
+  Version: 1.0.0
+  Last Updated: 2025-12-05
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Content cards with accessible click area extension
+  
+  Best Practice: Card Click Pattern
+  Reference: https://inclusive-components.design/cards/
+  
+  Accessibility Strategy:
+  - Single semantic link in card (in title)
+  - CSS extends click area to entire card
+  - Avoids nested links or div-button anti-pattern
+  - Screen readers announce only one link
+  
+  Keyboard Navigation:
+  - Tab: Move between cards (focuses on title link)
+  - Enter: Activate link
+  
+  HTML Structure:
+  - <article>: Semantic card container
+  - Single <a> in title
+  - CSS pseudo-element extends clickable area
+  
+  CSS Classes:
+  - .card: Card container
+  - .card-title: Title with link
+  
+  Dependencies:
+  - CSS: See assets/css/components.css (.card, .card-title)
+  - JS: None (CSS-only interaction)
+-->
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4);">
+  <article class="card">
+    <h3 class="card-title"><a href="#">Interesting Article</a></h3>
+    <p>This entire card is clickable thanks to CSS, but contains only one semantic link in the title.</p>
+  </article>
+  
+  <article class="card">
+    <h3 class="card-title"><a href="#">Another Topic</a></h3>
+    <p>Supports keyboard navigation and screen readers naturally.</p>
+  </article>
+</div>
+

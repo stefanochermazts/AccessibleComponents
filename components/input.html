@@ -1,0 +1,53 @@
+<!--
+  Component: Input Fields
+  Version: 1.0.0
+  Last Updated: 2025-12-05
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Accessible form inputs with validation states
+  
+  ARIA Pattern: Text Input
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/input/
+  
+  Keyboard Navigation:
+  - Tab: Move focus between inputs
+  - Type: Enter text
+  
+  Validation States:
+  - Valid: Default state
+  - Invalid: aria-invalid="true" + error message
+  
+  Required ARIA Attributes:
+  - aria-invalid="true|false": Validation state
+  - aria-describedby: Links to error message ID
+  
+  Required HTML Attributes:
+  - id: Unique identifier
+  - for: On label, matches input ID
+  - type: Input type (text, email, etc.)
+  
+  CSS Classes:
+  - .form-group: Container for label + input + error
+  - .form-label: Label element
+  - .form-input: Input field
+  - .form-error: Error message
+  
+  Dependencies:
+  - CSS: See assets/css/components.css (.form-group, .form-label, .form-input, .form-error)
+  - JS: See assets/js/main.js (form validation functions)
+-->
+<form onsubmit="event.preventDefault();">
+  <!-- Valid Input -->
+  <div class="form-group">
+    <label for="username" class="form-label">Username</label>
+    <input type="text" id="username" class="form-input" placeholder="Enter your name">
+  </div>
+  
+  <!-- Invalid Input with Error -->
+  <div class="form-group">
+    <label for="email" class="form-label">Email (with simulated error)</label>
+    <input type="email" id="email" class="form-input" aria-invalid="true" aria-describedby="email-error" value="invalid@email">
+    <span id="email-error" class="form-error">Please enter a valid email address.</span>
+  </div>
+</form>
+

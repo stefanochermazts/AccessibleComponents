@@ -78,12 +78,12 @@ class ThemeEditor {
       .contrast-dashboard { background: #1f2937; color: #fff; padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 2rem; }
       .contrast-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
       .contrast-card { background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 0.25rem; text-align: center; }
-      .contrast-card.pass { border-left: 4px solid #10b981; }
-      .contrast-card.fail { border-left: 4px solid #ef4444; }
+      .contrast-card.pass { border-left: 4px solid #047857; }
+      .contrast-card.fail { border-left: 4px solid #B91C1C; }
       .contrast-ratio { font-size: 2rem; font-weight: bold; display: block; margin: 0.5rem 0; }
       .contrast-badge { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }
-      .bg-pass { background: #10b981; color: #fff; }
-      .bg-fail { background: #ef4444; color: #fff; }
+      .bg-pass { background: #047857; color: #fff; }
+      .bg-fail { background: #B91C1C; color: #fff; }
     `;
     document.head.appendChild(style);
 
@@ -134,8 +134,71 @@ class ThemeEditor {
       grid.appendChild(groupDiv);
     }
 
+    // Export Button
+    const actionsDiv = document.createElement('div');
+    actionsDiv.style.marginTop = '2rem';
+    actionsDiv.style.textAlign = 'right';
+    
+    const exportBtn = document.createElement('button');
+    exportBtn.className = 'btn btn-primary';
+    exportBtn.textContent = 'Scarica Design System (.zip)';
+    exportBtn.onclick = () => this.handleExport();
+    
+    actionsDiv.appendChild(exportBtn);
+    editorDiv.appendChild(actionsDiv);
+
     editorDiv.appendChild(grid);
     this.container.appendChild(editorDiv);
+  }
+
+  handleExport() {
+    if (!window.JSZip || !window.saveAs) {
+      alert('Attendi il caricamento delle librerie di esportazione...');
+      return;
+    }
+
+    const zip = new JSZip();
+    const variables = {};
+    let cssContent = '/* Design System Personalizzato - WCAG 2.1 AA Compliant */\n:root {\n';
+
+    for (const [groupName, fields] of Object.entries(this.groups)) {
+      cssContent += `  /* ${groupName} */\n`;
+      fields.forEach(field => {
+        // Priority: Inline style (user edited) -> Computed style (default)
+        let val = document.documentElement.style.getPropertyValue(field.name);
+        if (!val) {
+             val = this.getCurrentValue(field.name);
+        }
+        val = val.trim();
+        
+        variables[field.name] = val;
+        cssContent += `  ${field.name}: ${val};\n`;
+      });
+      cssContent += '\n';
+    }
+    cssContent += '}\n';
+
+    // Add files to zip
+    zip.file("design-system.css", cssContent);
+    zip.file("variables.json", JSON.stringify(variables, null, 2));
+    
+    const readme = `Design System Personalizzato
+Generato il ${new Date().toLocaleDateString()}
+
+Contenuto del pacchetto:
+1. design-system.css: Include tutte le variabili CSS personalizzate. Importalo nel tuo progetto.
+2. variables.json: File di configurazione con i valori grezzi.
+
+Istruzioni:
+Includi 'design-system.css' nel tuo progetto. Assicurati che venga caricato DOPO eventuali fogli di stile base che definiscono le stesse variabili, oppure usalo come base per il tuo nuovo progetto.
+`;
+    zip.file("README.txt", readme);
+
+    // Generate and download
+    zip.generateAsync({type:"blob"})
+    .then(function(content) {
+        saveAs(content, "my-design-system.zip");
+    });
   }
 
   renderContrastChecker() {

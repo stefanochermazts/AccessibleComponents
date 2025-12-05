@@ -1,0 +1,53 @@
+<!--
+  Component: Listbox (Selectable List)
+  Version: 1.0.0
+  Last Updated: 2025-12-05
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Scrollable list with keyboard-based selection
+  
+  ARIA Pattern: Listbox
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/listbox/
+  
+  Keyboard Navigation:
+  - ↓/↑: Navigate options
+  - Space/Enter: Select option
+  - Home: First option
+  - End: Last option
+  - Ctrl+A: Select all (if multiselectable)
+  
+  Selection Modes:
+  - Single: aria-multiselectable="false" (default)
+  - Multiple: aria-multiselectable="true"
+  
+  Required ARIA Attributes:
+  - role="listbox": List container
+  - role="option": Each option
+  - aria-labelledby: Links to label
+  - aria-multiselectable: Selection mode
+  - aria-selected: Selection state
+  - tabindex="0": On listbox (roving tabindex on options)
+  
+  CSS Classes:
+  - .wcag-listbox-wrapper: Container
+  - .wcag-listbox: Listbox element
+  
+  Dependencies:
+  - CSS: See assets/css/components.css (.wcag-listbox)
+  - JS: See assets/js/main.js (initListboxes() function)
+-->
+<div class="wcag-listbox-wrapper">
+  <label id="listbox1-label" class="form-label">Select Options</label>
+  <ul 
+    role="listbox" 
+    aria-labelledby="listbox1-label" 
+    aria-multiselectable="false"
+    class="wcag-listbox"
+    tabindex="0"
+  >
+    <li role="option" id="opt1" aria-selected="false">Option 1</li>
+    <li role="option" id="opt2" aria-selected="false">Option 2</li>
+    <li role="option" id="opt3" aria-selected="false">Option 3</li>
+    <li role="option" id="opt4" aria-selected="false">Option 4</li>
+  </ul>
+</div>

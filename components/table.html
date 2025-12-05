@@ -1,0 +1,67 @@
+<!--
+  Component: Table (Sortable)
+  Version: 1.0.0
+  Last Updated: 2025-12-05
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Data table with sortable columns
+  
+  ARIA Pattern: Table (Sortable)
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/table/
+  
+  Keyboard Navigation:
+  - Tab: Navigate to sortable headers
+  - Enter/Space: Sort by column
+  
+  Sorting States:
+  - aria-sort="none": Not sorted
+  - aria-sort="ascending": Sorted A-Z or low-high
+  - aria-sort="descending": Sorted Z-A or high-low
+  
+  Required ARIA Attributes:
+  - role="table": Table element (optional, native <table> has implicit role)
+  - aria-sort: Sort state on <th> elements
+  - tabindex="0": On sortable headers
+  
+  Accessibility Features:
+  - <caption>: Table description
+  - <thead>/<tbody>: Semantic table structure
+  - <th>: Column headers
+  
+  CSS Classes:
+  - .wcag-table-wrapper: Container (horizontal scroll)
+  - .wcag-table: Table element
+  
+  Dependencies:
+  - CSS: See assets/css/components.css (.wcag-table)
+  - JS: See assets/js/main.js (initTables() function for sorting)
+-->
+<div class="wcag-table-wrapper">
+  <table class="wcag-table" role="table">
+    <caption>Employee List</caption>
+    <thead>
+      <tr>
+        <th aria-sort="none" tabindex="0">Name</th>
+        <th aria-sort="none" tabindex="0">Age</th>
+        <th aria-sort="none" tabindex="0">City</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John Smith</td>
+        <td>32</td>
+        <td>Rome</td>
+      </tr>
+      <tr>
+        <td>Laura White</td>
+        <td>28</td>
+        <td>Milan</td>
+      </tr>
+      <tr>
+        <td>George Green</td>
+        <td>45</td>
+        <td>Naples</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

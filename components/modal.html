@@ -1,0 +1,55 @@
+<!--
+  Component: Modal (Dialog)
+  Version: 1.0.0
+  Last Updated: 2025-12-05
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Modal dialog window that traps focus and blocks interaction with page content
+  
+  ARIA Pattern: Dialog (Modal)
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/
+  
+  Keyboard Navigation:
+  - Tab: Cycle through focusable elements (trapped inside modal)
+  - Shift+Tab: Reverse cycle
+  - Esc: Close modal
+  
+  Focus Management:
+  - Focus moves to modal on open
+  - Focus is trapped inside modal
+  - Focus returns to trigger button on close
+  
+  Required ARIA Attributes:
+  - role="dialog": Identifies as dialog
+  - aria-modal="true": Indicates modal behavior
+  - aria-labelledby: Links to modal title
+  - aria-hidden="true|false": Visibility state
+  
+  CSS Classes:
+  - .modal-overlay: Background overlay
+  - .modal-dialog: Modal container
+  - .modal-close-btn: Close button (×)
+  
+  Dependencies:
+  - CSS: See assets/css/components.css (.modal-overlay, .modal-dialog, .modal-close-btn)
+  - JS: See assets/js/main.js (initModals() function with focus trap)
+  
+  Trigger Example:
+  <button class="btn btn-primary" data-modal-target="modal-example">Open Modal</button>
+-->
+<div id="modal-example" class="modal-overlay" aria-hidden="true">
+  <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <h2 id="modal-title">Example Modal</h2>
+    <p>This modal traps focus inside it while open. On close, focus returns to the button that opened it.</p>
+    <div class="form-group">
+      <label for="modal-input" class="form-label">Test focus:</label>
+      <input type="text" id="modal-input" class="form-input">
+    </div>
+    <div style="text-align: right; margin-top: var(--space-4);">
+      <button class="btn btn-secondary" data-modal-close>Close</button>
+      <button class="btn btn-primary" data-modal-close>Save</button>
+    </div>
+    <button class="modal-close-btn" data-modal-close aria-label="Close Modal">×</button>
+  </div>
+</div>
+

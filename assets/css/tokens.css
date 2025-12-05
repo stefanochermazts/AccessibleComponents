@@ -1,7 +1,7 @@
 :root {
   /* --- Color Palette (Pastel & Accessible) --- */
   /* Primary Brand */
-  --c-primary: #4F46E5; /* Indigo 600 - High contrast */
+  --c-primary: #4338CA; /* Indigo 700 - AAA compliant (7.5:1 with white) */
   --c-primary-light: #E0E7FF; /* Indigo 100 - Pastel background */
   --c-primary-dark: #312E81; /* Indigo 900 */
 
@@ -23,12 +23,12 @@
   --c-gray-800: #1F2937;
   --c-gray-900: #111827;
 
-  /* Semantic */
-  --c-success: #059669;
+  /* Semantic - WCAG AA Compliant (4.5:1 minimum) */
+  --c-success: #047857; /* Darker green for better contrast (was #059669) */
   --c-success-bg: #ECFDF5;
-  --c-error: #DC2626;
+  --c-error: #B91C1C; /* Darker red for better contrast (was #DC2626) */
   --c-error-bg: #FEF2F2;
-  --c-warning: #D97706;
+  --c-warning: #B45309; /* Darker orange for better contrast (was #D97706) */
   --c-warning-bg: #FFFBEB;
   --c-info: #2563EB;
   --c-info-bg: #EFF6FF;
@@ -77,6 +77,44 @@
   --focus-ring-width: 3px;
   --focus-ring-offset: 2px;
   --focus-shadow: 0 0 0 var(--focus-ring-offset) var(--c-white), 0 0 0 calc(var(--focus-ring-offset) + var(--focus-ring-width)) var(--focus-ring-color);
+
+  /* --- Component Specific Tokens (W3C APG) --- */
+  
+  /* Combobox & Listbox */
+  --c-combobox-bg: var(--c-white);
+  --c-combobox-border: var(--c-gray-300);
+  --c-combobox-hover-bg: var(--c-gray-50);
+  --c-combobox-selected-bg: var(--c-primary-light);
+  --c-combobox-selected-text: var(--c-primary-dark);
+  
+  /* Tooltip */
+  --c-tooltip-bg: var(--c-gray-800);
+  --c-tooltip-text: var(--c-white);
+  --z-tooltip: 1000;
+
+  /* Slider & Meter */
+  --c-slider-track: var(--c-gray-200);
+  --c-slider-fill: var(--c-primary);
+  --c-slider-thumb: var(--c-white);
+  --c-slider-thumb-border: var(--c-primary);
+  --h-slider-track: 0.5rem;
+  --s-slider-thumb: 1.25rem;
+
+  /* Table & Grid */
+  --c-table-header-bg: var(--c-gray-50);
+  --c-table-border: var(--c-gray-200);
+  --c-table-row-hover: var(--c-gray-50);
+  --c-table-stripe-bg: var(--c-gray-50);
+
+  /* Tree View */
+  --c-tree-hover-bg: var(--c-gray-100);
+  --c-tree-selected-bg: var(--c-primary-light);
+  --c-tree-selected-text: var(--c-primary-dark);
+
+  /* Splitter */
+  --c-splitter-bg: var(--c-gray-300);
+  --c-splitter-hover-bg: var(--c-primary);
+  --w-splitter: 4px;
 }
 
 @media (prefers-color-scheme: dark) {

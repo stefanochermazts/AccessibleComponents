@@ -1,0 +1,89 @@
+<!--
+  Component: Treegrid (Hierarchical Grid)
+  Version: 1.0.0
+  Last Updated: 2025-12-05
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Hierarchical data grid combining tree and grid patterns
+  
+  ARIA Pattern: Treegrid
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/treegrid/
+  
+  Keyboard Navigation:
+  - ↓/↑: Navigate rows
+  - ←/→: Navigate columns or expand/collapse rows
+  - Enter/Space: Activate expand/collapse button
+  - Home/End: First/last column in row
+  
+  Required ARIA Attributes:
+  - role="treegrid": Treegrid container
+  - role="row": Each row
+  - role="columnheader": Column headers
+  - role="gridcell": Data cells
+  - aria-label: Treegrid description
+  - aria-level: Hierarchical level (1, 2, 3, etc.)
+  - aria-expanded: Row expansion state
+  - hidden: Hide collapsed child rows
+  
+  CSS Classes:
+  - .wcag-treegrid: Treegrid container
+  - .treegrid-row: Row element
+  - .grid-header: Header row
+  - .treegrid-cell: Cell element
+  - .treegrid-expand-btn: Expand/collapse button
+  
+  Dependencies:
+  - CSS: See assets/css/components.css (.wcag-treegrid, .treegrid-row, .treegrid-cell)
+  - JS: See assets/js/main.js (initTreegrids() function)
+-->
+<div class="wcag-treegrid" role="treegrid" aria-label="Hierarchical budget">
+  <div class="treegrid-row grid-header" role="row" aria-level="1">
+    <div class="treegrid-cell" role="columnheader">Category</div>
+    <div class="treegrid-cell" role="columnheader">Budget</div>
+    <div class="treegrid-cell" role="columnheader">Spent</div>
+  </div>
+  <div class="treegrid-row" role="row" aria-level="1" aria-expanded="false">
+    <div class="treegrid-cell" role="gridcell" tabindex="0">
+      <button class="treegrid-expand-btn" aria-label="Expand">▶</button>
+      Marketing
+    </div>
+    <div class="treegrid-cell" role="gridcell" tabindex="-1">€50,000</div>
+    <div class="treegrid-cell" role="gridcell" tabindex="-1">€32,000</div>
+  </div>
+  <div class="treegrid-row" role="row" aria-level="2" hidden>
+    <div class="treegrid-cell" role="gridcell" tabindex="-1" style="padding-left: 2rem;">
+      Online Advertising
+    </div>
+    <div class="treegrid-cell" role="gridcell" tabindex="-1">€30,000</div>
+    <div class="treegrid-cell" role="gridcell" tabindex="-1">€22,000</div>
+  </div>
+  <div class="treegrid-row" role="row" aria-level="2" hidden>
+    <div class="treegrid-cell" role="gridcell" tabindex="-1" style="padding-left: 2rem;">
+      Events
+    </div>
+    <div class="treegrid-cell" role="gridcell" tabindex="-1">€20,000</div>
+    <div class="treegrid-cell" role="gridcell" tabindex="-1">€10,000</div>
+  </div>
+  <div class="treegrid-row" role="row" aria-level="1" aria-expanded="false">
+    <div class="treegrid-cell" role="gridcell" tabindex="-1">
+      <button class="treegrid-expand-btn" aria-label="Expand">▶</button>
+      Development
+    </div>
+    <div class="treegrid-cell" role="gridcell" tabindex="-1">€80,000</div>
+    <div class="treegrid-cell" role="gridcell" tabindex="-1">€65,000</div>
+  </div>
+  <div class="treegrid-row" role="row" aria-level="2" hidden>
+    <div class="treegrid-cell" role="gridcell" tabindex="-1" style="padding-left: 2rem;">
+      Infrastructure
+    </div>
+    <div class="treegrid-cell" role="gridcell" tabindex="-1">€50,000</div>
+    <div class="treegrid-cell" role="gridcell" tabindex="-1">€40,000</div>
+  </div>
+  <div class="treegrid-row" role="row" aria-level="2" hidden>
+    <div class="treegrid-cell" role="gridcell" tabindex="-1" style="padding-left: 2rem;">
+      Software Licenses
+    </div>
+    <div class="treegrid-cell" role="gridcell" tabindex="-1">€30,000</div>
+    <div class="treegrid-cell" role="gridcell" tabindex="-1">€25,000</div>
+  </div>
+</div>

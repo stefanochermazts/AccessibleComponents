@@ -1,0 +1,27 @@
+<!--
+  Component: Skip Link
+  Version: 1.0.0
+  Last Updated: 2025-12-05
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Allows keyboard users to skip repetitive navigation and jump directly to main content
+  
+  ARIA Pattern: N/A (standard HTML)
+  Reference: https://www.w3.org/WAI/WCAG21/Techniques/general/G1
+  
+  Keyboard Navigation:
+  - Tab: Focus skip link (visible on focus)
+  - Enter: Jump to main content
+  
+  Required Attributes:
+  - href="#main-content": Must match the ID of the main content container
+  
+  CSS Classes:
+  - .skip-link: Positioned off-screen by default, visible on focus
+  
+  Dependencies:
+  - CSS: See assets/css/base.css (.skip-link)
+  - JS: None (native browser behavior)
+-->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+

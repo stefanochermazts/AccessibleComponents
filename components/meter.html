@@ -1,0 +1,54 @@
+<!--
+  Component: Meter (Level Indicator)
+  Version: 1.0.0
+  Last Updated: 2025-12-05
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Display scalar measurement within known range
+  
+  ARIA Pattern: Meter
+  Reference: https://www.w3.org/TR/wai-aria-1.2/#meter
+  
+  Keyboard Navigation:
+  - None (non-interactive, display only)
+  
+  Value Ranges:
+  - Low: Below data-valuelow (red)
+  - Medium: Between low and high (yellow)
+  - High: Above data-valuehigh (green)
+  
+  Required ARIA Attributes:
+  - role="meter": Meter element
+  - aria-valuenow: Current value
+  - aria-valuemin: Minimum value
+  - aria-valuemax: Maximum value
+  - aria-labelledby: Links to label
+  
+  Custom Data Attributes:
+  - data-valuelow: Low threshold (33% default)
+  - data-valuehigh: High threshold (66% default)
+  
+  CSS Classes:
+  - .wcag-meter-wrapper: Container
+  - .wcag-meter: Meter element
+  - .meter-fill: Filled bar (color based on thresholds)
+  
+  Dependencies:
+  - CSS: See assets/css/components.css (.wcag-meter, .meter-fill)
+  - JS: See assets/js/main.js (initMeters() function for visual updates)
+-->
+<div class="wcag-meter-wrapper">
+  <label id="meter1-label" class="form-label">Disk Space</label>
+  <div 
+    class="wcag-meter" 
+    role="meter" 
+    aria-labelledby="meter1-label"
+    aria-valuenow="75" 
+    aria-valuemin="0" 
+    aria-valuemax="100"
+    data-valuelow="33"
+    data-valuehigh="66"
+  >
+    <div class="meter-fill"></div>
+  </div>
+</div>

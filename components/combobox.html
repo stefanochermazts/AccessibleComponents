@@ -1,0 +1,77 @@
+<!--
+  Component: Combobox (Autocomplete)
+  Version: 1.0.0
+  Last Updated: 2025-12-05
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Input field with autocomplete dropdown list
+  
+  ARIA Pattern: Combobox
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/combobox/
+  
+  Keyboard Navigation:
+  - ↓: Open listbox or move to next option
+  - ↑: Move to previous option
+  - Enter: Select focused option and close
+  - Esc: Close listbox
+  - Home: First option
+  - End: Last option
+  
+  Required ARIA Attributes:
+  - role="combobox": Input field
+  - aria-autocomplete="list": Indicates autocomplete behavior
+  - aria-expanded: Listbox open/closed state
+  - aria-haspopup="listbox": Indicates popup type
+  - aria-controls: Links to listbox ID
+  - role="listbox": Options container
+  - role="option": Each option
+  
+  CSS Classes:
+  - .wcag-combobox-wrapper: Container
+  - .combo-input-wrapper: Input + button wrapper
+  - .combo-toggle-btn: Dropdown toggle
+  - .combo-listbox: Options list
+  
+  Dependencies:
+  - CSS: See assets/css/components.css (.wcag-combobox-wrapper, .combo-listbox)
+  - JS: See assets/js/main.js (initComboboxes() function)
+-->
+<div class="wcag-combobox-wrapper">
+  <label id="combo1-label" class="form-label">Favorite Fruit</label>
+  <div class="combo-input-wrapper">
+    <input 
+      type="text" 
+      role="combobox" 
+      aria-autocomplete="list" 
+      aria-expanded="false" 
+      aria-haspopup="listbox" 
+      aria-controls="combo1-listbox"
+      id="combo1-input"
+      class="form-input"
+    >
+    <button 
+      type="button" 
+      class="combo-toggle-btn" 
+      aria-label="Toggle list" 
+      tabindex="-1"
+    >▼</button>
+  </div>
+  <ul 
+    id="combo1-listbox" 
+    role="listbox" 
+    aria-labelledby="combo1-label"
+    class="combo-listbox"
+    hidden
+  >
+    <li role="option" id="combo1-opt1">Apple</li>
+    <li role="option" id="combo1-opt2">Banana</li>
+    <li role="option" id="combo1-opt3">Blueberry</li>
+    <li role="option" id="combo1-opt4">Boysenberry</li>
+    <li role="option" id="combo1-opt5">Cherry</li>
+    <li role="option" id="combo1-opt6">Cranberry</li>
+    <li role="option" id="combo1-opt7">Durian</li>
+    <li role="option" id="combo1-opt8">Eggplant</li>
+    <li role="option" id="combo1-opt9">Fig</li>
+    <li role="option" id="combo1-opt10">Grape</li>
+  </ul>
+</div>

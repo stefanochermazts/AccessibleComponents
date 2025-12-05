@@ -115,6 +115,25 @@ Tutti i componenti devono supportare il **Progressive Enhancement**: se JS è di
     * Pulsanti Prev/Next accessibili.
     * Nascondere le slide non attive (`aria-hidden="true"`, `tabindex="-1"`).
 
+### Famiglia E: Componenti Aggiuntivi W3C APG (Da Implementare)
+
+| Componente | Riferimento APG | Descrizione Funzionale |
+| :--- | :--- | :--- |
+| **Combobox** | [Combobox Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/) | Input con popup che suggerisce valori. Supporta autocompletamento e selezione. |
+| **Disclosure** | [Disclosure Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/) | Widget che mostra/nasconde contenuto (più semplice dell'Accordion). |
+| **Feed** | [Feed Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/feed/) | Lista di articoli che carica nuovi contenuti allo scroll (infinite scroll). |
+| **Grid** | [Grid Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/grid/) | Contenitore interattivo per dati tabellari navigabili con frecce. |
+| **Listbox** | [Listbox Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/listbox/) | Lista di opzioni selezionabili (singola o multipla), alternativa alla `<select>`. |
+| **Meter** | [Meter Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/meter/) | Rappresentazione grafica di un valore numerico in un range (es. spazio disco). |
+| **Slider** | [Slider Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/slider/) | Input per selezionare un valore da un range tramite trascinamento o tastiera. |
+| **Spinbutton** | [Spinbutton Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/spinbutton/) | Input numerico con pulsanti incremento/decremento. |
+| **Table** | [Table Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/table/) | Tabella dati statica ottimizzata per l'accessibilità (headers, captions). |
+| **Toolbar** | [Toolbar Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/) | Contenitore di controlli (bottoni, toggle) raggruppati logicamente. |
+| **Tooltip** | [Tooltip Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/) | Popup informativo che appare al focus o hover su un elemento. |
+| **Tree View** | [Tree View Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/treeview/) | Lista gerarchica espandibile/collassabile (es. file system). |
+| **Treegrid** | [Treegrid Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/treegrid/) | Griglia che supporta la gerarchia (righe espandibili come un albero). |
+| **Window Splitter** | [Window Splitter Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/windowsplitter/) | Separatore mobile tra due sezioni di contenuto ridimensionabili. |
+
 ---
 
 ## 4. Architettura Plugin WordPress

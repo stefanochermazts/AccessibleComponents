@@ -1,0 +1,67 @@
+<!--
+  Component: Carousel (Accessible Slider)
+  Version: 1.0.0
+  Last Updated: 2025-12-05
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Image/content slider with accessible controls and auto-play pause
+  
+  ARIA Pattern: Carousel
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/carousel/
+  
+  Keyboard Navigation:
+  - Tab: Navigate to carousel controls
+  - Enter/Space: Activate control buttons
+  - (Optional) ←/→: Previous/Next slide
+  
+  Accessibility Requirements:
+  - Play/Pause control for auto-rotation
+  - aria-roledescription="carousel"
+  - aria-roledescription="slide" on each slide
+  - aria-label with slide position (e.g., "1 of 3")
+  - aria-hidden="true" on inactive slides
+  
+  Required ARIA Attributes:
+  - role="group": Each slide
+  - aria-roledescription="carousel": Container
+  - aria-roledescription="slide": Each slide
+  - aria-label: Position indicator ("1 of 3")
+  - aria-hidden: Hide inactive slides from AT
+  
+  CSS Classes:
+  - .carousel: Container
+  - .carousel-inner: Slides wrapper
+  - .carousel-slide: Individual slide
+  - .carousel-controls: Control buttons container
+  - .carousel-btn: Control button
+  
+  Dependencies:
+  - CSS: See assets/css/components.css (.carousel, .carousel-slide, .carousel-btn)
+  - JS: See assets/js/main.js (initCarousels() function)
+-->
+<div class="carousel" aria-roledescription="carousel" aria-label="Example Slider">
+  <div class="carousel-inner">
+    <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="1 of 3">
+      <div style="height: 300px; background: var(--c-primary-light); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--c-primary-dark);">
+        Slide 1
+      </div>
+    </div>
+    <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 3" aria-hidden="true">
+      <div style="height: 300px; background: var(--c-secondary-light); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--c-secondary-dark);">
+        Slide 2
+      </div>
+    </div>
+    <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 3" aria-hidden="true">
+      <div style="height: 300px; background: #FED7AA; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #9A3412;">
+        Slide 3
+      </div>
+    </div>
+  </div>
+  
+  <div class="carousel-controls">
+    <button class="carousel-btn" data-action="prev" aria-label="Previous Slide">◀</button>
+    <button class="carousel-btn" data-action="play-pause" aria-label="Play Carousel">▶</button>
+    <button class="carousel-btn" data-action="next" aria-label="Next Slide">▶</button>
+  </div>
+</div>
+

@@ -1,0 +1,59 @@
+<!--
+  Component: Tabs (Tablist)
+  Version: 1.0.0
+  Last Updated: 2025-12-05
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Organize content into multiple panels, displaying one at a time
+  
+  ARIA Pattern: Tabs
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/tabs/
+  
+  Keyboard Navigation:
+  - Tab: Move focus into and out of tab list
+  - ←/→: Navigate between tabs
+  - Home: First tab
+  - End: Last tab
+  - Enter/Space: Activate focused tab
+  
+  Required ARIA Attributes:
+  - role="tablist": Container for tabs
+  - role="tab": Each tab button
+  - role="tabpanel": Each content panel
+  - aria-selected="true|false": Tab selection state
+  - aria-controls: Links tab to panel
+  - aria-labelledby: Links panel to tab
+  - tabindex="-1": On inactive tabs
+  
+  CSS Classes:
+  - .tabs: Wrapper container
+  - .tab-button: Tab button
+  - .tab-panel: Content panel
+  
+  Dependencies:
+  - CSS: See assets/css/components.css (.tabs, .tab-button, .tab-panel)
+  - JS: See assets/js/main.js (initTabs() function)
+-->
+<div class="tabs">
+  <div role="tablist" aria-label="Example Tabs">
+    <button role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" class="tab-button">
+      HTML5
+    </button>
+    <button role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" class="tab-button" tabindex="-1">
+      CSS3
+    </button>
+    <button role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" class="tab-button" tabindex="-1">
+      JavaScript
+    </button>
+  </div>
+  <div id="panel-1" role="tabpanel" aria-labelledby="tab-1" class="tab-panel">
+    <p>HTML5 provides the semantic structure needed for accessibility.</p>
+  </div>
+  <div id="panel-2" role="tabpanel" aria-labelledby="tab-2" class="tab-panel" hidden>
+    <p>CSS3 handles visual appearance and variables (Tokens) for theming.</p>
+  </div>
+  <div id="panel-3" role="tabpanel" aria-labelledby="tab-3" class="tab-panel" hidden>
+    <p>JavaScript adds accessible interactivity (Focus management, ARIA states).</p>
+  </div>
+</div>
+

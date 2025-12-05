@@ -1,0 +1,51 @@
+<!--
+  Component: Feed (Infinite Scroll)
+  Version: 1.0.0
+  Last Updated: 2025-12-05
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Scrollable list that loads content dynamically
+  
+  ARIA Pattern: Feed
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/feed/
+  
+  Keyboard Navigation:
+  - Page Down/Up: Scroll through articles
+  - Tab: Navigate focusable elements within articles
+  
+  Required ARIA Attributes:
+  - role="feed": Feed container
+  - role="article": Each article
+  - aria-label: Feed description
+  - aria-busy: Loading state
+  - aria-posinset: Article position in set
+  - aria-setsize: Total articles (-1 for unknown)
+  - tabindex="0": Each article (for keyboard scrolling)
+  - aria-live="polite": Loading status (on loading message)
+  
+  CSS Classes:
+  - .wcag-feed: Feed container
+  - .feed-article: Article element
+  - .feed-loading: Loading indicator
+  
+  Dependencies:
+  - CSS: See assets/css/components.css (.wcag-feed, .feed-article)
+  - JS: See assets/js/main.js (initFeeds() function for infinite scroll)
+-->
+<div class="wcag-feed" role="feed" aria-label="Recent news" aria-busy="false">
+  <article class="feed-article" role="article" aria-posinset="1" aria-setsize="-1" tabindex="0">
+    <h4>Article 1</h4>
+    <p>This is the first article in the feed. The Feed pattern supports accessible infinite scrolling.</p>
+  </article>
+  <article class="feed-article" role="article" aria-posinset="2" aria-setsize="-1" tabindex="0">
+    <h4>Article 2</h4>
+    <p>Scroll down to automatically load more articles.</p>
+  </article>
+  <article class="feed-article" role="article" aria-posinset="3" aria-setsize="-1" tabindex="0">
+    <h4>Article 3</h4>
+    <p>Screen readers will receive notifications when new content is loaded.</p>
+  </article>
+  <div class="feed-loading" role="status" aria-live="polite" hidden>
+    Loading...
+  </div>
+</div>

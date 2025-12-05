@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,22 +75,23 @@
 <body>
 
   <!-- A.4 Skip Link -->
-  <a href="#main-content" class="skip-link">Vai al contenuto principale</a>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <header class="container">
-    <nav class="main-nav" aria-label="Menu principale">
-      <a href="#" class="nav-link" style="font-weight: 700; font-size: var(--fs-xl); color: var(--c-primary);">Accessibile.</a>
+    <nav class="main-nav" aria-label="Main menu">
+      <a href="#" class="nav-link" style="font-weight: 700; font-size: var(--fs-xl); color: var(--c-primary);">Accessible.</a>
       
       <button class="mobile-menu-btn" aria-expanded="false" aria-controls="main-menu" aria-label="Menu">
         ☰
       </button>
 
       <ul id="main-menu" class="nav-list">
-        <li><a href="#navigazione" class="nav-link">Navigazione</a></li>
-        <li><a href="#form" class="nav-link">Form</a></li>
-        <li><a href="#contenuto" class="nav-link">Contenuto</a></li>
+        <li><a href="#navigation" class="nav-link">Navigation</a></li>
+        <li><a href="#form" class="nav-link">Forms</a></li>
+        <li><a href="#content" class="nav-link">Content</a></li>
         <li><a href="#media" class="nav-link">Media</a></li>
-        <li><a href="#tokens" class="btn btn-primary">Documentazione</a></li>
+        <li><a href="#apg-components" class="nav-link">APG Components</a></li>
+        <li><a href="#tokens" class="btn btn-primary">Documentation</a></li>
       </ul>
     </nav>
   </header>
@@ -100,10 +101,10 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="container">
-        <h1>Design System Accessibile</h1>
+        <h1>Accessible Design System</h1>
         <p style="font-size: var(--fs-xl); max-width: 600px; margin: 0 auto;">
-          Una libreria di componenti framework-agnostic, progettata per la conformità WCAG 2.1 AA.
-          Moderna, leggera e pronta per l'uso.
+          A framework-agnostic component library designed for WCAG 2.1 AA compliance.
+          Modern, lightweight, and ready to use.
         </p>
       </div>
     </section>
@@ -120,10 +121,10 @@
         </div>
       </section>
       
-      <!-- A. Navigazione -->
-      <section id="navigazione" class="component-section">
-        <h2>A. Navigazione</h2>
-        <p>Componenti essenziali per l'orientamento dell'utente.</p>
+      <!-- A. Navigation -->
+      <section id="navigation" class="component-section">
+        <h2>A. Navigation</h2>
+        <p>Essential components for user orientation.</p>
 
         <!-- Breadcrumbs -->
         <div class="component-demo">
@@ -131,17 +132,17 @@
           <nav aria-label="Breadcrumb" class="breadcrumb">
             <ol>
               <li><a href="#">Home</a></li>
-              <li><a href="#">Documentazione</a></li>
-              <li><a href="#" aria-current="page">Componenti</a></li>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#" aria-current="page">Components</a></li>
             </ol>
           </nav>
         </div>
 
         <!-- Tabs -->
         <div class="component-demo">
-          <h3>Tabs Accessibili</h3>
+          <h3>Accessible Tabs</h3>
           <div class="tabs">
-            <div role="tablist" aria-label="Esempio Schede">
+            <div role="tablist" aria-label="Example Tabs">
               <button role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" class="tab-button">
                 HTML5
               </button>
@@ -153,13 +154,13 @@
               </button>
             </div>
             <div id="panel-1" role="tabpanel" aria-labelledby="tab-1" class="tab-panel">
-              <p>HTML5 fornisce la struttura semantica necessaria per l'accessibilità.</p>
+              <p>HTML5 provides the semantic structure needed for accessibility.</p>
             </div>
             <div id="panel-2" role="tabpanel" aria-labelledby="tab-2" class="tab-panel" hidden>
-              <p>CSS3 gestisce l'aspetto visivo e le variabili (Tokens) per il theming.</p>
+              <p>CSS3 handles visual appearance and variables (Tokens) for theming.</p>
             </div>
             <div id="panel-3" role="tabpanel" aria-labelledby="tab-3" class="tab-panel" hidden>
-              <p>JavaScript aggiunge interattività accessibile (Focus management, ARIA states).</p>
+              <p>JavaScript adds accessible interactivity (Focus management, ARIA states).</p>
             </div>
           </div>
         </div>
@@ -167,11 +168,11 @@
 
       <!-- B. Forms -->
       <section id="form" class="component-section">
-        <h2>B. Input & Form</h2>
-        <p>Elementi interattivi con stati di focus chiari e validazione semantica.</p>
+        <h2>B. Input & Forms</h2>
+        <p>Interactive elements with clear focus states and semantic validation.</p>
 
         <div class="component-demo">
-          <h3>Bottoni</h3>
+          <h3>Buttons</h3>
           <div style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
             <button class="btn btn-primary">Primary Action</button>
             <button class="btn btn-secondary">Secondary Action</button>
@@ -185,43 +186,43 @@
           <form onsubmit="event.preventDefault();">
             <div class="form-group">
               <label for="username" class="form-label">Username</label>
-              <input type="text" id="username" class="form-input" placeholder="Inserisci il tuo nome">
+              <input type="text" id="username" class="form-input" placeholder="Enter your name">
             </div>
             
             <div class="form-group">
-              <label for="email" class="form-label">Email (con errore simulato)</label>
-              <input type="email" id="email" class="form-input" aria-invalid="true" aria-describedby="email-error" value="email@sbagliata">
-              <span id="email-error" class="form-error">Inserisci un indirizzo email valido.</span>
+              <label for="email" class="form-label">Email (with simulated error)</label>
+              <input type="email" id="email" class="form-input" aria-invalid="true" aria-describedby="email-error" value="invalid@email">
+              <span id="email-error" class="form-error">Please enter a valid email address.</span>
             </div>
 
             <div class="form-group">
-              <p class="form-label">Preferenze</p>
+              <p class="form-label">Preferences</p>
               
               <label class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input">
                 <span class="custom-control-indicator"></span>
-                <span>Iscriviti alla newsletter</span>
+                <span>Subscribe to newsletter</span>
               </label>
 
               <label class="custom-control custom-radio">
                 <input type="radio" name="theme" class="custom-control-input" checked>
                 <span class="custom-control-indicator"></span>
-                <span>Tema Chiaro</span>
+                <span>Light Theme</span>
               </label>
               
               <label class="custom-control custom-radio">
                 <input type="radio" name="theme" class="custom-control-input">
                 <span class="custom-control-indicator"></span>
-                <span>Tema Scuro (Auto)</span>
+                <span>Dark Theme (Auto)</span>
               </label>
             </div>
           </form>
         </div>
       </section>
 
-      <!-- C. Contenuto -->
-      <section id="contenuto" class="component-section">
-        <h2>C. Contenuto & Feedback</h2>
+      <!-- C. Content -->
+      <section id="content" class="component-section">
+        <h2>C. Content & Feedback</h2>
         
         <!-- Accordion -->
         <div class="component-demo">
@@ -229,44 +230,44 @@
           <div class="accordion-item">
             <h3 class="accordion-header">
               <button aria-expanded="false" aria-controls="acc-content-1">
-                <span>Cos'è l'accessibilità web?</span>
+                <span>What is web accessibility?</span>
                 <span class="accordion-icon">▼</span>
               </button>
             </h3>
             <div id="acc-content-1" class="accordion-panel" hidden>
-              <p>L'accessibilità web (a11y) è la pratica inclusiva di rimuovere le barriere che impediscono l'interazione con, o l'accesso a, i siti web da parte di persone con disabilità.</p>
+              <p>Web accessibility (a11y) is the inclusive practice of removing barriers that prevent interaction with, or access to, websites by people with disabilities.</p>
             </div>
           </div>
           <div class="accordion-item">
             <h3 class="accordion-header">
               <button aria-expanded="false" aria-controls="acc-content-2">
-                <span>Quali sono i livelli WCAG?</span>
+                <span>What are the levels?</span>
                 <span class="accordion-icon">▼</span>
               </button>
             </h3>
             <div id="acc-content-2" class="accordion-panel" hidden>
-              <p>I livelli sono A (minimo), AA (standard legale/globale), e AAA (massimo). Questo sistema punta al livello AA.</p>
+              <p>The levels are A (minimum), AA (legal/global standard), and AAA (maximum). This system targets level AA.</p>
             </div>
           </div>
         </div>
 
         <!-- Modal -->
         <div class="component-demo">
-          <h3>Modale Accessibile</h3>
-          <button class="btn btn-primary" data-modal-target="modal-example">Apri Modale</button>
+          <h3>Accessible Modal</h3>
+          <button class="btn btn-primary" data-modal-target="modal-example">Open Modal</button>
         </div>
 
         <!-- Cards -->
         <div class="component-demo">
-          <h3>Card Inclusiva</h3>
+          <h3>Inclusive Cards</h3>
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4);">
             <article class="card">
-              <h3 class="card-title"><a href="#">Articolo Interessante</a></h3>
-              <p>Questa intera card è cliccabile grazie al CSS, ma contiene solo un link semantico nel titolo.</p>
+              <h3 class="card-title"><a href="#">Interesting Article</a></h3>
+              <p>This entire card is clickable thanks to CSS, but contains only one semantic link in the title.</p>
             </article>
             <article class="card">
-              <h3 class="card-title"><a href="#">Altro Argomento</a></h3>
-              <p>Supporta navigazione da tastiera e screen reader in modo naturale.</p>
+              <h3 class="card-title"><a href="#">Another Topic</a></h3>
+              <p>Supports keyboard navigation and screen readers naturally.</p>
             </article>
           </div>
         </div>
@@ -275,37 +276,37 @@
         <div class="component-demo">
           <h3>Alerts</h3>
           <div class="alert alert-info" role="status">
-            <strong>Info:</strong> Questo è un messaggio informativo.
+            <strong>Info:</strong> This is an informational message.
           </div>
           <div class="alert alert-success" role="status">
-            <strong>Successo:</strong> Operazione completata correttamente.
+            <strong>Success:</strong> Operation completed successfully.
           </div>
           <div class="alert alert-error" role="alert">
-            <strong>Errore:</strong> Si è verificato un problema.
+            <strong>Error:</strong> A problem occurred.
           </div>
         </div>
       </section>
 
       <!-- D. Media -->
       <section id="media" class="component-section">
-        <h2>D. Media Avanzati</h2>
+        <h2>D. Advanced Media</h2>
         
         <!-- Carousel -->
         <div class="component-demo">
-          <h3>Carousel Accessibile</h3>
-          <div class="carousel" aria-roledescription="carousel" aria-label="Esempio Slider">
+          <h3>Accessible Carousel</h3>
+          <div class="carousel" aria-roledescription="carousel" aria-label="Example Slider">
             <div class="carousel-inner">
-              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="1 di 3">
+              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="1 of 3">
                 <div style="height: 300px; background: var(--c-primary-light); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--c-primary-dark);">
                   Slide 1
                 </div>
               </div>
-              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 di 3" aria-hidden="true">
+              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 3" aria-hidden="true">
                 <div style="height: 300px; background: var(--c-secondary-light); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--c-secondary-dark);">
                   Slide 2
                 </div>
               </div>
-              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 di 3" aria-hidden="true">
+              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 3" aria-hidden="true">
                 <div style="height: 300px; background: #FED7AA; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #9A3412;">
                   Slide 3
                 </div>
@@ -313,12 +314,622 @@
             </div>
             
             <div class="carousel-controls">
-              <button class="carousel-btn" data-action="prev" aria-label="Slide Precedente">◀</button>
+              <button class="carousel-btn" data-action="prev" aria-label="Previous Slide">◀</button>
               <button class="carousel-btn" data-action="play-pause" aria-label="Play Carousel">▶</button>
-              <button class="carousel-btn" data-action="next" aria-label="Slide Successiva">▶</button>
+              <button class="carousel-btn" data-action="next" aria-label="Next Slide">▶</button>
             </div>
           </div>
         </div>
+      </section>
+
+      <!-- E. New APG Components -->
+      <section id="apg-components" class="component-section">
+        <h2>E. W3C APG Components</h2>
+        <p>Additional components following the ARIA Authoring Practices Guide.</p>
+
+        <!-- Combobox -->
+        <div class="component-demo">
+          <h3>Combobox (Autocomplete)</h3>
+          <div class="wcag-combobox-wrapper">
+            <label id="combo1-label" class="form-label">Favorite Fruit</label>
+            <div class="combo-input-wrapper">
+              <input 
+                type="text" 
+                role="combobox" 
+                aria-autocomplete="list" 
+                aria-expanded="false" 
+                aria-haspopup="listbox" 
+                aria-controls="combo1-listbox"
+                id="combo1-input"
+                class="form-input"
+                placeholder="Type or select..."
+              >
+              <button 
+                type="button" 
+                class="combo-toggle-btn" 
+                aria-label="Show options" 
+                tabindex="-1"
+              >▼</button>
+            </div>
+            <ul 
+              id="combo1-listbox" 
+              role="listbox" 
+              aria-labelledby="combo1-label"
+              class="combo-listbox"
+              hidden
+            >
+              <li role="option" id="combo1-opt1">Apple</li>
+              <li role="option" id="combo1-opt2">Banana</li>
+              <li role="option" id="combo1-opt3">Blueberry</li>
+              <li role="option" id="combo1-opt4">Cherry</li>
+              <li role="option" id="combo1-opt5">Grape</li>
+              <li role="option" id="combo1-opt6">Peach</li>
+              <li role="option" id="combo1-opt7">Orange</li>
+              <li role="option" id="combo1-opt8">Strawberry</li>
+            </ul>
+          </div>
+          <p style="margin-top: var(--space-2); font-size: var(--fs-sm); color: var(--c-gray-600);">
+            <strong>Keyboard:</strong> ↓/↑ to navigate, Enter to select, Esc to close.
+          </p>
+        </div>
+
+        <!-- Disclosure -->
+        <div class="component-demo">
+          <h3>Disclosure (Show/Hide)</h3>
+          <div class="wcag-disclosure">
+            <button 
+              type="button" 
+              class="disclosure-btn" 
+              aria-expanded="false" 
+              aria-controls="disclosure1-content"
+            >
+              <span class="disclosure-icon">▶</span>
+              Additional Details
+            </button>
+            <div 
+              id="disclosure1-content" 
+              class="disclosure-content" 
+              hidden
+            >
+              <p>This is content that can be shown or hidden. Similar to Accordion but simpler, ideal for FAQs or single collapsible sections.</p>
+            </div>
+          </div>
+          <div class="wcag-disclosure">
+            <button 
+              type="button" 
+              class="disclosure-btn" 
+              aria-expanded="false" 
+              aria-controls="disclosure2-content"
+            >
+              <span class="disclosure-icon">▶</span>
+              More Information
+            </button>
+            <div 
+              id="disclosure2-content" 
+              class="disclosure-content" 
+              hidden
+            >
+              <p>Each disclosure is independent. Opening one doesn't close the others.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tooltip -->
+        <div class="component-demo">
+          <h3>Accessible Tooltip</h3>
+          <p>Tooltips provide contextual information on hover or keyboard focus.</p>
+          <div style="display: flex; gap: var(--space-4); flex-wrap: wrap; margin-top: var(--space-4);">
+            <div class="wcag-tooltip-wrapper">
+              <button 
+                type="button" 
+                class="btn btn-secondary" 
+                aria-describedby="tooltip1"
+              >
+                Info ℹ️
+              </button>
+              <div 
+                id="tooltip1" 
+                role="tooltip" 
+                class="wcag-tooltip"
+              >
+                This is an accessible tooltip!
+              </div>
+            </div>
+            
+            <div class="wcag-tooltip-wrapper">
+              <button 
+                type="button" 
+                class="btn btn-outline" 
+                aria-describedby="tooltip2"
+              >
+                Help ❓
+              </button>
+              <div 
+                id="tooltip2" 
+                role="tooltip" 
+                class="wcag-tooltip"
+              >
+                Press Esc to close
+              </div>
+            </div>
+          </div>
+          <p style="margin-top: var(--space-2); font-size: var(--fs-sm); color: var(--c-gray-600);">
+            <strong>Keyboard:</strong> Tab to focus, Esc to hide.
+          </p>
+        </div>
+
+        <!-- Slider -->
+        <div class="component-demo">
+          <h3>Slider (Range)</h3>
+          <div class="wcag-slider-wrapper">
+            <label id="slider1-label" class="form-label">Audio Volume</label>
+            <div class="slider-container">
+              <div 
+                id="slider1" 
+                role="slider" 
+                aria-valuenow="50" 
+                aria-valuemin="0" 
+                aria-valuemax="100" 
+                aria-labelledby="slider1-label" 
+                tabindex="0"
+                class="wcag-slider"
+              >
+                <div class="slider-track"></div>
+                <div class="slider-fill" style="width: 50%;"></div>
+                <div class="slider-thumb" style="left: 50%;"></div>
+              </div>
+              <span class="slider-value" aria-hidden="true">50</span>
+            </div>
+          </div>
+          <div class="wcag-slider-wrapper">
+            <label id="slider2-label" class="form-label">Brightness</label>
+            <div class="slider-container">
+              <div 
+                id="slider2" 
+                role="slider" 
+                aria-valuenow="75" 
+                aria-valuemin="0" 
+                aria-valuemax="100" 
+                aria-labelledby="slider2-label" 
+                tabindex="0"
+                class="wcag-slider"
+              >
+                <div class="slider-track"></div>
+                <div class="slider-fill" style="width: 75%;"></div>
+                <div class="slider-thumb" style="left: 75%;"></div>
+              </div>
+              <span class="slider-value" aria-hidden="true">75</span>
+            </div>
+          </div>
+          <p style="margin-top: var(--space-2); font-size: var(--fs-sm); color: var(--c-gray-600);">
+            <strong>Keyboard:</strong> ←/→ or ↓/↑ to adjust, Home/End for min/max, PgUp/PgDown for large steps.
+          </p>
+        </div>
+
+        <!-- Listbox -->
+        <div class="component-demo">
+          <h3>Listbox (List Selection)</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4);">
+            <div class="wcag-listbox-wrapper">
+              <label id="listbox1-label" class="form-label">Single Selection</label>
+              <ul 
+                role="listbox" 
+                aria-labelledby="listbox1-label" 
+                aria-multiselectable="false"
+                class="wcag-listbox"
+                tabindex="0"
+              >
+                <li role="option" id="opt1" aria-selected="false">Rome</li>
+                <li role="option" id="opt2" aria-selected="false">Milan</li>
+                <li role="option" id="opt3" aria-selected="false">Naples</li>
+                <li role="option" id="opt4" aria-selected="false">Turin</li>
+                <li role="option" id="opt5" aria-selected="false">Florence</li>
+              </ul>
+            </div>
+            <div class="wcag-listbox-wrapper">
+              <label id="listbox2-label" class="form-label">Multiple Selection</label>
+              <ul 
+                role="listbox" 
+                aria-labelledby="listbox2-label" 
+                aria-multiselectable="true"
+                class="wcag-listbox"
+                tabindex="0"
+              >
+                <li role="option" id="opt6" aria-selected="false">HTML</li>
+                <li role="option" id="opt7" aria-selected="false">CSS</li>
+                <li role="option" id="opt8" aria-selected="false">JavaScript</li>
+                <li role="option" id="opt9" aria-selected="false">TypeScript</li>
+                <li role="option" id="opt10" aria-selected="false">Python</li>
+              </ul>
+            </div>
+          </div>
+          <p style="margin-top: var(--space-2); font-size: var(--fs-sm); color: var(--c-gray-600);">
+            <strong>Keyboard:</strong> ↓/↑ to navigate, Space/Enter to select, Home/End for first/last.
+          </p>
+        </div>
+
+        <!-- Meter -->
+        <div class="component-demo">
+          <h3>Meter (Level Indicator)</h3>
+          <div class="wcag-meter-wrapper">
+            <label id="meter1-label" class="form-label">Disk Space (High)</label>
+            <div 
+              class="wcag-meter" 
+              role="meter" 
+              aria-labelledby="meter1-label"
+              aria-valuenow="85" 
+              aria-valuemin="0" 
+              aria-valuemax="100"
+              data-valuelow="33"
+              data-valuehigh="66"
+            >
+              <div class="meter-fill"></div>
+            </div>
+          </div>
+          <div class="wcag-meter-wrapper">
+            <label id="meter2-label" class="form-label">Battery Level (Medium)</label>
+            <div 
+              class="wcag-meter" 
+              role="meter" 
+              aria-labelledby="meter2-label"
+              aria-valuenow="45" 
+              aria-valuemin="0" 
+              aria-valuemax="100"
+              data-valuelow="33"
+              data-valuehigh="66"
+            >
+              <div class="meter-fill"></div>
+            </div>
+          </div>
+          <div class="wcag-meter-wrapper">
+            <label id="meter3-label" class="form-label">RAM Memory (Low)</label>
+            <div 
+              class="wcag-meter" 
+              role="meter" 
+              aria-labelledby="meter3-label"
+              aria-valuenow="20" 
+              aria-valuemin="0" 
+              aria-valuemax="100"
+              data-valuelow="33"
+              data-valuehigh="66"
+            >
+              <div class="meter-fill"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spinbutton -->
+        <div class="component-demo">
+          <h3>Spinbutton (Numeric Input)</h3>
+          <div style="display: flex; gap: var(--space-6); flex-wrap: wrap;">
+            <div class="wcag-spinbutton-wrapper">
+              <label id="spin1-label" class="form-label">Quantity</label>
+              <div class="wcag-spinbutton">
+                <button class="spinbutton-btn" data-action="decrement" aria-label="Decrease">−</button>
+                <span 
+                  class="spinbutton-value" 
+                  role="spinbutton" 
+                  aria-labelledby="spin1-label"
+                  aria-valuenow="5" 
+                  aria-valuemin="0" 
+                  aria-valuemax="10"
+                  data-step="1"
+                  tabindex="0"
+                >5</span>
+                <button class="spinbutton-btn" data-action="increment" aria-label="Increase">+</button>
+              </div>
+            </div>
+            <div class="wcag-spinbutton-wrapper">
+              <label id="spin2-label" class="form-label">Temperature (°C)</label>
+              <div class="wcag-spinbutton">
+                <button class="spinbutton-btn" data-action="decrement" aria-label="Decrease">−</button>
+                <span 
+                  class="spinbutton-value" 
+                  role="spinbutton" 
+                  aria-labelledby="spin2-label"
+                  aria-valuenow="20" 
+                  aria-valuemin="15" 
+                  aria-valuemax="30"
+                  data-step="0.5"
+                  tabindex="0"
+                >20</span>
+                <button class="spinbutton-btn" data-action="increment" aria-label="Increase">+</button>
+              </div>
+            </div>
+          </div>
+          <p style="margin-top: var(--space-2); font-size: var(--fs-sm); color: var(--c-gray-600);">
+            <strong>Keyboard:</strong> ↓/↑ to adjust, Home/End for min/max, PgUp/PgDown for large steps.
+          </p>
+        </div>
+
+        <!-- Toolbar -->
+        <div class="component-demo">
+          <h3>Toolbar</h3>
+          <div role="toolbar" aria-label="Text formatting toolbar" class="wcag-toolbar">
+            <button class="btn btn-outline" aria-label="Bold">
+              <strong>B</strong>
+            </button>
+            <button class="btn btn-outline" aria-label="Italic">
+              <em>I</em>
+            </button>
+            <button class="btn btn-outline" aria-label="Underline">
+              <u>U</u>
+            </button>
+            <div class="toolbar-separator" role="separator"></div>
+            <button class="btn btn-outline" aria-label="Align left">≡</button>
+            <button class="btn btn-outline" aria-label="Center">≣</button>
+            <button class="btn btn-outline" aria-label="Align right">≡</button>
+            <div class="toolbar-separator" role="separator"></div>
+            <button class="btn btn-outline" aria-label="Bullet list">• List</button>
+            <button class="btn btn-outline" aria-label="Numbered list">1. List</button>
+          </div>
+          <p style="margin-top: var(--space-2); font-size: var(--fs-sm); color: var(--c-gray-600);">
+            <strong>Keyboard:</strong> ←/→ to navigate controls, Home/End for first/last.
+          </p>
+        </div>
+
+        <!-- Table -->
+        <div class="component-demo">
+          <h3>Table (Sortable Table)</h3>
+          <div class="wcag-table-wrapper">
+            <table class="wcag-table" role="table">
+              <caption style="text-align: left; font-weight: 600; padding: var(--space-2) 0;">Employee List</caption>
+              <thead>
+                <tr>
+                  <th aria-sort="none" tabindex="0">Name</th>
+                  <th aria-sort="none" tabindex="0">Age</th>
+                  <th aria-sort="none" tabindex="0">Department</th>
+                  <th aria-sort="none" tabindex="0">Salary</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>John Smith</td>
+                  <td>32</td>
+                  <td>IT</td>
+                  <td>€45,000</td>
+                </tr>
+                <tr>
+                  <td>Laura White</td>
+                  <td>28</td>
+                  <td>Marketing</td>
+                  <td>€38,000</td>
+                </tr>
+                <tr>
+                  <td>George Green</td>
+                  <td>45</td>
+                  <td>HR</td>
+                  <td>€52,000</td>
+                </tr>
+                <tr>
+                  <td>Anna Black</td>
+                  <td>35</td>
+                  <td>IT</td>
+                  <td>€48,000</td>
+                </tr>
+                <tr>
+                  <td>Paul Blue</td>
+                  <td>29</td>
+                  <td>Sales</td>
+                  <td>€42,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="margin-top: var(--space-2); font-size: var(--fs-sm); color: var(--c-gray-600);">
+            <strong>Interaction:</strong> Click headers to sort. Supports numeric and alphabetic sorting.
+          </p>
+        </div>
+
+        <!-- Grid -->
+        <div class="component-demo">
+          <h3>Grid (Interactive Grid)</h3>
+          <div class="wcag-grid" role="grid" aria-label="Product inventory" tabindex="0">
+            <div class="grid-row grid-header" role="row">
+              <div class="grid-cell" role="columnheader">Product</div>
+              <div class="grid-cell" role="columnheader">Price</div>
+              <div class="grid-cell" role="columnheader">Stock</div>
+            </div>
+            <div class="grid-row" role="row">
+              <div class="grid-cell" role="gridcell" tabindex="-1">Dell XPS Laptop</div>
+              <div class="grid-cell" role="gridcell" tabindex="-1">€1,299</div>
+              <div class="grid-cell" role="gridcell" tabindex="-1">15</div>
+            </div>
+            <div class="grid-row" role="row">
+              <div class="grid-cell" role="gridcell" tabindex="-1">Logitech Mouse</div>
+              <div class="grid-cell" role="gridcell" tabindex="-1">€25</div>
+              <div class="grid-cell" role="gridcell" tabindex="-1">50</div>
+            </div>
+            <div class="grid-row" role="row">
+              <div class="grid-cell" role="gridcell" tabindex="-1">Mechanical Keyboard</div>
+              <div class="grid-cell" role="gridcell" tabindex="-1">€89</div>
+              <div class="grid-cell" role="gridcell" tabindex="-1">30</div>
+            </div>
+            <div class="grid-row" role="row">
+              <div class="grid-cell" role="gridcell" tabindex="-1">27" Monitor</div>
+              <div class="grid-cell" role="gridcell" tabindex="-1">€349</div>
+              <div class="grid-cell" role="gridcell" tabindex="-1">8</div>
+            </div>
+          </div>
+          <p style="margin-top: var(--space-2); font-size: var(--fs-sm); color: var(--c-gray-600);">
+            <strong>Keyboard:</strong> Arrow keys to navigate cells, Home/End for first/last cell in row.
+          </p>
+        </div>
+
+        <!-- Tree View -->
+        <div class="component-demo">
+          <h3>Tree View (Hierarchical Tree)</h3>
+          <ul class="wcag-tree" role="tree" aria-label="File system structure">
+            <li role="treeitem" aria-expanded="false" aria-selected="false" class="tree-item">
+              <div class="tree-item-content" tabindex="0">
+                <span class="tree-expand-icon">▶</span>
+                <span>📁 Documents</span>
+              </div>
+              <ul>
+                <li role="treeitem" aria-selected="false" class="tree-item">
+                  <div class="tree-item-content" tabindex="-1">
+                    <span style="margin-left: 1rem;">📄 Report_2025.pdf</span>
+                  </div>
+                </li>
+                <li role="treeitem" aria-selected="false" class="tree-item">
+                  <div class="tree-item-content" tabindex="-1">
+                    <span style="margin-left: 1rem;">📄 Invoice_January.xlsx</span>
+                  </div>
+                </li>
+                <li role="treeitem" aria-expanded="false" aria-selected="false" class="tree-item">
+                  <div class="tree-item-content" tabindex="-1">
+                    <span class="tree-expand-icon">▶</span>
+                    <span>📁 Archive</span>
+                  </div>
+                  <ul>
+                    <li role="treeitem" aria-selected="false" class="tree-item">
+                      <div class="tree-item-content" tabindex="-1">
+                        <span style="margin-left: 1rem;">📄 Old_Report.pdf</span>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li role="treeitem" aria-expanded="false" aria-selected="false" class="tree-item">
+              <div class="tree-item-content" tabindex="-1">
+                <span class="tree-expand-icon">▶</span>
+                <span>📁 Images</span>
+              </div>
+              <ul>
+                <li role="treeitem" aria-selected="false" class="tree-item">
+                  <div class="tree-item-content" tabindex="-1">
+                    <span style="margin-left: 1rem;">🖼️ vacation_2024.jpg</span>
+                  </div>
+                </li>
+                <li role="treeitem" aria-selected="false" class="tree-item">
+                  <div class="tree-item-content" tabindex="-1">
+                    <span style="margin-left: 1rem;">🖼️ company_logo.png</span>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <p style="margin-top: var(--space-2); font-size: var(--fs-sm); color: var(--c-gray-600);">
+            <strong>Keyboard:</strong> → to expand, ← to collapse, ↓/↑ to navigate, Space/Enter to select.
+          </p>
+        </div>
+
+        <!-- Treegrid -->
+        <div class="component-demo">
+          <h3>Treegrid (Hierarchical Grid)</h3>
+          <div class="wcag-treegrid" role="treegrid" aria-label="Hierarchical budget">
+            <div class="treegrid-row grid-header" role="row" aria-level="1">
+              <div class="treegrid-cell" role="columnheader">Category</div>
+              <div class="treegrid-cell" role="columnheader">Budget</div>
+              <div class="treegrid-cell" role="columnheader">Spent</div>
+            </div>
+            <div class="treegrid-row" role="row" aria-level="1" aria-expanded="false">
+              <div class="treegrid-cell" role="gridcell" tabindex="0">
+                <button class="treegrid-expand-btn" aria-label="Expand">▶</button>
+                Marketing
+              </div>
+              <div class="treegrid-cell" role="gridcell" tabindex="-1">€50,000</div>
+              <div class="treegrid-cell" role="gridcell" tabindex="-1">€32,000</div>
+            </div>
+            <div class="treegrid-row" role="row" aria-level="2" hidden>
+              <div class="treegrid-cell" role="gridcell" tabindex="-1" style="padding-left: 2rem;">
+                Online Advertising
+              </div>
+              <div class="treegrid-cell" role="gridcell" tabindex="-1">€30,000</div>
+              <div class="treegrid-cell" role="gridcell" tabindex="-1">€22,000</div>
+            </div>
+            <div class="treegrid-row" role="row" aria-level="2" hidden>
+              <div class="treegrid-cell" role="gridcell" tabindex="-1" style="padding-left: 2rem;">
+                Events
+              </div>
+              <div class="treegrid-cell" role="gridcell" tabindex="-1">€20,000</div>
+              <div class="treegrid-cell" role="gridcell" tabindex="-1">€10,000</div>
+            </div>
+            <div class="treegrid-row" role="row" aria-level="1" aria-expanded="false">
+              <div class="treegrid-cell" role="gridcell" tabindex="-1">
+                <button class="treegrid-expand-btn" aria-label="Expand">▶</button>
+                Development
+              </div>
+              <div class="treegrid-cell" role="gridcell" tabindex="-1">€80,000</div>
+              <div class="treegrid-cell" role="gridcell" tabindex="-1">€65,000</div>
+            </div>
+            <div class="treegrid-row" role="row" aria-level="2" hidden>
+              <div class="treegrid-cell" role="gridcell" tabindex="-1" style="padding-left: 2rem;">
+                Infrastructure
+              </div>
+              <div class="treegrid-cell" role="gridcell" tabindex="-1">€50,000</div>
+              <div class="treegrid-cell" role="gridcell" tabindex="-1">€40,000</div>
+            </div>
+            <div class="treegrid-row" role="row" aria-level="2" hidden>
+              <div class="treegrid-cell" role="gridcell" tabindex="-1" style="padding-left: 2rem;">
+                Software Licenses
+              </div>
+              <div class="treegrid-cell" role="gridcell" tabindex="-1">€30,000</div>
+              <div class="treegrid-cell" role="gridcell" tabindex="-1">€25,000</div>
+            </div>
+          </div>
+          <p style="margin-top: var(--space-2); font-size: var(--fs-sm); color: var(--c-gray-600);">
+            <strong>Interaction:</strong> Click buttons to expand/collapse categories.
+          </p>
+        </div>
+
+        <!-- Feed -->
+        <div class="component-demo">
+          <h3>Feed (Infinite Scroll)</h3>
+          <div class="wcag-feed" role="feed" aria-label="Recent news" aria-busy="false">
+            <article class="feed-article" role="article" aria-posinset="1" aria-setsize="-1" tabindex="0">
+              <h4>News 1: New Design System Released</h4>
+              <p>This is the first article in the feed. The Feed pattern supports accessible infinite scroll with automatic loading.</p>
+            </article>
+            <article class="feed-article" role="article" aria-posinset="2" aria-setsize="-1" tabindex="0">
+              <h4>News 2: WCAG 2.2 Update</h4>
+              <p>Scroll down to automatically load more articles. Screen readers will receive notifications.</p>
+            </article>
+            <article class="feed-article" role="article" aria-posinset="3" aria-setsize="-1" tabindex="0">
+              <h4>News 3: Accessibility Best Practices</h4>
+              <p>Each article can receive keyboard focus and is navigable sequentially.</p>
+            </article>
+            <div class="feed-loading" role="status" aria-live="polite" hidden>
+              Loading new articles...
+            </div>
+          </div>
+          <p style="margin-top: var(--space-2); font-size: var(--fs-sm); color: var(--c-gray-600);">
+            <strong>Interaction:</strong> Scroll down to automatically load new articles.
+          </p>
+        </div>
+
+        <!-- Window Splitter -->
+        <div class="component-demo">
+          <h3>Window Splitter (Resizable Separator)</h3>
+          <div class="wcag-splitter-container">
+            <div class="splitter-pane" style="flex: 0 0 50%;">
+              <h4>Left Panel</h4>
+              <p>This panel can be resized by dragging the center separator.</p>
+              <p>You can also use the keyboard: focus the separator and use the ←/→ arrow keys to adjust size.</p>
+            </div>
+            <div 
+              class="wcag-splitter" 
+              role="separator" 
+              aria-orientation="vertical"
+              aria-label="Resize panels"
+              aria-valuenow="50"
+              aria-valuemin="10"
+              aria-valuemax="90"
+              tabindex="0"
+            ></div>
+            <div class="splitter-pane" style="flex: 1;">
+              <h4>Right Panel</h4>
+              <p>Resizing works with both mouse (drag & drop) and keyboard.</p>
+              <p><strong>Home:</strong> Left panel to minimum (10%)<br>
+              <strong>End:</strong> Left panel to maximum (90%)</p>
+            </div>
+          </div>
+          <p style="margin-top: var(--space-2); font-size: var(--fs-sm); color: var(--c-gray-600);">
+            <strong>Keyboard:</strong> Tab to focus separator, ←/→ to adjust, Home/End for min/max.
+          </p>
+        </div>
+
       </section>
 
     </div>
@@ -326,29 +937,32 @@
 
   <footer style="background: var(--c-gray-900); color: var(--c-white); padding: var(--space-8) 0; margin-top: var(--space-16); text-align: center;">
     <div class="container">
-      <p>&copy; 2025 Accessible Components. Rilasciato sotto licenza MIT.</p>
+      <p>&copy; 2025 Accessible Components. Released under MIT License.</p>
     </div>
   </footer>
 
   <!-- Modal Markup (Hidden by default) -->
   <div id="modal-example" class="modal-overlay" aria-hidden="true">
     <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <h2 id="modal-title">Esempio Modale</h2>
-      <p>Questa modale intrappola il focus al suo interno finché è aperta. Alla chiusura, il focus torna al bottone che l'ha aperta.</p>
+      <h2 id="modal-title">Example Modal</h2>
+      <p>This modal traps focus inside it while open. On close, focus returns to the button that opened it.</p>
       <div class="form-group">
-        <label for="modal-input" class="form-label">Prova il focus:</label>
+        <label for="modal-input" class="form-label">Test focus:</label>
         <input type="text" id="modal-input" class="form-input">
       </div>
       <div style="text-align: right; margin-top: var(--space-4);">
-        <button class="btn btn-secondary" data-modal-close>Chiudi</button>
-        <button class="btn btn-primary" data-modal-close>Salva</button>
+        <button class="btn btn-secondary" data-modal-close>Close</button>
+        <button class="btn btn-primary" data-modal-close>Save</button>
       </div>
-      <button class="modal-close-btn" data-modal-close aria-label="Chiudi Modale">×</button>
+      <button class="modal-close-btn" data-modal-close aria-label="Close Modal">×</button>
     </div>
   </div>
 
   <!-- JS Logic -->
-  <script src="assets/js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <!-- Cache-bust main.js to ensure latest Treegrid logic loads -->
+  <script src="assets/js/main.js?v=20251205b"></script>
   <script src="assets/js/themer.js"></script>
 </body>
 </html>

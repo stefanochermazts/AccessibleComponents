@@ -1,0 +1,43 @@
+<!--
+  Component: Buttons
+  Version: 1.0.0
+  Last Updated: 2025-12-05
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Accessible button variants with clear states
+  
+  ARIA Pattern: Button
+  Reference: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/button_role
+  
+  Keyboard Navigation:
+  - Tab: Move focus to button
+  - Enter/Space: Activate button
+  
+  States:
+  - Default: Normal state
+  - Hover: Mouse over
+  - Focus: Keyboard focus (visible ring)
+  - Active: Being clicked
+  - Disabled: Cannot be activated
+  
+  Required ARIA Attributes (when disabled):
+  - aria-disabled="true": Indicates disabled state
+  - disabled: HTML attribute (prevents interaction)
+  
+  CSS Classes:
+  - .btn: Base button class
+  - .btn-primary: Primary action button
+  - .btn-secondary: Secondary action button
+  - .btn-outline: Outline variant
+  
+  Dependencies:
+  - CSS: See assets/css/components.css (.btn, .btn-primary, .btn-secondary, .btn-outline)
+  - JS: None (native button behavior)
+-->
+<div style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
+  <button class="btn btn-primary">Primary Action</button>
+  <button class="btn btn-secondary">Secondary Action</button>
+  <button class="btn btn-outline">Outline Button</button>
+  <button class="btn btn-primary" disabled aria-disabled="true">Disabled</button>
+</div>
+

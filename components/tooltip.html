@@ -1,0 +1,47 @@
+<!--
+  Component: Tooltip
+  Version: 1.0.0
+  Last Updated: 2025-12-05
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Display contextual information on hover or focus
+  
+  ARIA Pattern: Tooltip
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/
+  
+  Keyboard Navigation:
+  - Tab: Focus trigger element (shows tooltip)
+  - Esc: Dismiss tooltip
+  
+  Mouse Interaction:
+  - Hover: Show tooltip
+  - Mouse leave: Hide tooltip
+  
+  Required ARIA Attributes:
+  - role="tooltip": Tooltip container
+  - aria-describedby: Links trigger to tooltip ID
+  
+  CSS Classes:
+  - .wcag-tooltip-wrapper: Container (position relative)
+  - .wcag-tooltip: Tooltip popup
+  
+  Dependencies:
+  - CSS: See assets/css/components.css (.wcag-tooltip-wrapper, .wcag-tooltip)
+  - JS: See assets/js/main.js (initTooltips() function)
+-->
+<div class="wcag-tooltip-wrapper">
+  <button 
+    type="button" 
+    class="btn btn-secondary" 
+    aria-describedby="tooltip1"
+  >
+    Hover me
+  </button>
+  <div 
+    id="tooltip1" 
+    role="tooltip" 
+    class="wcag-tooltip"
+  >
+    I am an accessible tooltip!
+  </div>
+</div>

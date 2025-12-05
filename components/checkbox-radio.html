@@ -1,0 +1,62 @@
+<!--
+  Component: Custom Checkbox & Radio Buttons
+  Version: 1.0.0
+  Last Updated: 2025-12-05
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Styled checkbox and radio buttons with accessible markup
+  
+  ARIA Pattern: Checkbox / Radio Group
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/radio/
+  
+  Keyboard Navigation:
+  - Tab: Move between controls
+  - Space: Toggle checkbox
+  - Arrow keys: Navigate radio group (auto-select)
+  
+  Implementation:
+  - Native HTML inputs (hidden visually)
+  - Custom styled indicators
+  - Label wraps input for larger click area
+  
+  Required HTML Attributes:
+  - type="checkbox" or type="radio"
+  - name: Group radio buttons together
+  - checked: Default selection state
+  
+  CSS Classes:
+  - .custom-control: Wrapper container
+  - .custom-checkbox: Checkbox variant
+  - .custom-radio: Radio variant
+  - .custom-control-input: Native input (visually hidden)
+  - .custom-control-indicator: Styled custom indicator
+  
+  Dependencies:
+  - CSS: See assets/css/components.css (.custom-control, .custom-checkbox, .custom-radio)
+  - JS: None (native input behavior)
+-->
+<div class="form-group">
+  <p class="form-label">Preferences</p>
+  
+  <!-- Checkbox Example -->
+  <label class="custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input">
+    <span class="custom-control-indicator"></span>
+    <span>Subscribe to newsletter</span>
+  </label>
+
+  <!-- Radio Group Example -->
+  <label class="custom-control custom-radio">
+    <input type="radio" name="theme" class="custom-control-input" checked>
+    <span class="custom-control-indicator"></span>
+    <span>Light Theme</span>
+  </label>
+  
+  <label class="custom-control custom-radio">
+    <input type="radio" name="theme" class="custom-control-input">
+    <span class="custom-control-indicator"></span>
+    <span>Dark Theme (Auto)</span>
+  </label>
+</div>
+

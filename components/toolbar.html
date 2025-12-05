@@ -1,0 +1,46 @@
+<!--
+  Component: Toolbar
+  Version: 1.0.0
+  Last Updated: 2025-12-05
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Group of related controls (buttons, inputs) in a horizontal bar
+  
+  ARIA Pattern: Toolbar
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/
+  
+  Keyboard Navigation:
+  - Tab: Move focus into/out of toolbar
+  - ←/→: Navigate between toolbar items
+  - Home: First item
+  - End: Last item
+  - Enter/Space: Activate focused item
+  
+  Required ARIA Attributes:
+  - role="toolbar": Toolbar container
+  - aria-label: Descriptive toolbar name
+  - role="separator": Visual dividers (optional)
+  
+  CSS Classes:
+  - .wcag-toolbar: Toolbar container
+  - .toolbar-separator: Visual separator
+  
+  Dependencies:
+  - CSS: See assets/css/components.css (.wcag-toolbar, .toolbar-separator)
+  - JS: See assets/js/main.js (initToolbars() function for keyboard navigation)
+-->
+<div role="toolbar" aria-label="Text formatting toolbar" class="wcag-toolbar">
+  <button class="btn btn-outline" aria-label="Bold">
+    <strong>B</strong>
+  </button>
+  <button class="btn btn-outline" aria-label="Italic">
+    <em>I</em>
+  </button>
+  <button class="btn btn-outline" aria-label="Underline">
+    <u>U</u>
+  </button>
+  <div class="toolbar-separator" role="separator"></div>
+  <button class="btn btn-outline" aria-label="Align left">≡</button>
+  <button class="btn btn-outline" aria-label="Center">≣</button>
+  <button class="btn btn-outline" aria-label="Align right">≡</button>
+</div>

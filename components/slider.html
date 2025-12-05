@@ -1,0 +1,59 @@
+<!--
+  Component: Slider (Range)
+  Version: 1.0.0
+  Last Updated: 2025-12-05
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Adjust numeric value by dragging or keyboard
+  
+  ARIA Pattern: Slider
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/slider/
+  
+  Keyboard Navigation:
+  - ←/→: Decrease/increase value (small step)
+  - ↓/↑: Decrease/increase value (small step)
+  - PageDown/PageUp: Large decrease/increase
+  - Home: Minimum value
+  - End: Maximum value
+  
+  Required ARIA Attributes:
+  - role="slider": Slider element
+  - aria-valuenow: Current value
+  - aria-valuemin: Minimum value
+  - aria-valuemax: Maximum value
+  - aria-labelledby: Links to label
+  - tabindex="0": Keyboard focusable
+  
+  CSS Classes:
+  - .wcag-slider-wrapper: Container
+  - .slider-container: Slider + value display
+  - .wcag-slider: Slider element
+  - .slider-track: Background track
+  - .slider-fill: Filled portion
+  - .slider-thumb: Draggable handle
+  - .slider-value: Current value display
+  
+  Dependencies:
+  - CSS: See assets/css/components.css (.wcag-slider, .slider-track, .slider-thumb)
+  - JS: See assets/js/main.js (initSliders() function)
+-->
+<div class="wcag-slider-wrapper">
+  <label id="slider1-label" class="form-label">Volume</label>
+  <div class="slider-container">
+    <div 
+      id="slider1" 
+      role="slider" 
+      aria-valuenow="50" 
+      aria-valuemin="0" 
+      aria-valuemax="100" 
+      aria-labelledby="slider1-label" 
+      tabindex="0"
+      class="wcag-slider"
+    >
+      <div class="slider-track"></div>
+      <div class="slider-fill" style="width: 50%;"></div>
+      <div class="slider-thumb" style="left: 50%;"></div>
+    </div>
+    <span class="slider-value" aria-hidden="true">50</span>
+  </div>
+</div>

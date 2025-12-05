@@ -1,0 +1,71 @@
+<!--
+  Component: Tree View (Hierarchical Tree)
+  Version: 1.0.0
+  Last Updated: 2025-12-05
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Hierarchical list structure with expand/collapse
+  
+  ARIA Pattern: Tree View
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/treeview/
+  
+  Keyboard Navigation:
+  - ↓/↑: Navigate tree items
+  - →: Expand node (if collapsed) or move to first child
+  - ←: Collapse node (if expanded) or move to parent
+  - Enter/Space: Activate/select item
+  - Home: First item
+  - End: Last visible item
+  
+  Required ARIA Attributes:
+  - role="tree": Tree container
+  - role="treeitem": Each item
+  - aria-expanded="true|false": Node state (for parent nodes)
+  - aria-selected: Selection state
+  - aria-label: Tree description
+  - tabindex="0": First item
+  - tabindex="-1": Other items (roving tabindex)
+  
+  CSS Classes:
+  - .wcag-tree: Tree container
+  - .tree-item: Tree item
+  - .tree-item-content: Item content wrapper
+  - .tree-expand-icon: Expand/collapse indicator
+  
+  Dependencies:
+  - CSS: See assets/css/components.css (.wcag-tree, .tree-item, .tree-expand-icon)
+  - JS: See assets/js/main.js (initTreeViews() function)
+-->
+<ul class="wcag-tree" role="tree" aria-label="File structure">
+  <li role="treeitem" aria-expanded="false" aria-selected="false">
+    <div class="tree-item-content" tabindex="0">
+      <span class="tree-expand-icon">▶</span>
+      <span>📁 Documents</span>
+    </div>
+    <ul>
+      <li role="treeitem" aria-selected="false">
+        <div class="tree-item-content" tabindex="-1">
+          <span>📄 Report.pdf</span>
+        </div>
+      </li>
+      <li role="treeitem" aria-selected="false">
+        <div class="tree-item-content" tabindex="-1">
+          <span>📄 Invoice.xlsx</span>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li role="treeitem" aria-expanded="false" aria-selected="false">
+    <div class="tree-item-content" tabindex="-1">
+      <span class="tree-expand-icon">▶</span>
+      <span>📁 Images</span>
+    </div>
+    <ul>
+      <li role="treeitem" aria-selected="false">
+        <div class="tree-item-content" tabindex="-1">
+          <span>🖼️ photo1.jpg</span>
+        </div>
+      </li>
+    </ul>
+  </li>
+</ul>

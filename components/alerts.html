@@ -1,0 +1,55 @@
+<!--
+  Component: Alerts (Notifications)
+  Version: 1.0.0
+  Last Updated: 2025-12-05
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Display important messages to users with semantic meaning
+  
+  ARIA Pattern: Alert / Status
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/alert/
+  
+  Alert Types:
+  - Info: General information (role="status")
+  - Success: Confirmation messages (role="status")
+  - Error: Critical errors (role="alert")
+  
+  ARIA Roles:
+  - role="alert": Interrupts user (critical errors)
+  - role="status": Non-interrupting (info, success)
+  
+  Screen Reader Behavior:
+  - role="alert": Announced immediately
+  - role="status": Announced at next opportunity
+  
+  Required ARIA Attributes:
+  - role="alert" or role="status": Semantic meaning
+  
+  CSS Classes:
+  - .alert: Base alert class
+  - .alert-info: Informational variant (blue)
+  - .alert-success: Success variant (green)
+  - .alert-error: Error variant (red)
+  
+  Color Contrast:
+  - All variants meet WCAG AA (min 4.5:1)
+  
+  Dependencies:
+  - CSS: See assets/css/components.css (.alert, .alert-info, .alert-success, .alert-error)
+  - JS: None (static messages) or dynamic insertion for live updates
+-->
+<!-- Info Alert (Non-interrupting) -->
+<div class="alert alert-info" role="status">
+  <strong>Info:</strong> This is an informational message.
+</div>
+
+<!-- Success Alert (Non-interrupting) -->
+<div class="alert alert-success" role="status">
+  <strong>Success:</strong> Operation completed successfully.
+</div>
+
+<!-- Error Alert (Interrupting) -->
+<div class="alert alert-error" role="alert">
+  <strong>Error:</strong> A problem occurred.
+</div>
+
