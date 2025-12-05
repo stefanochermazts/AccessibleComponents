@@ -27,19 +27,19 @@ Accessible, reusable components with full keyboard support, correct ARIA, and de
 ## Project Structure
 ```mermaid
 graph TD
-  ROOT[repo root] --> ASSETS[assets/]
-  ROOT --> COMPONENTS[components/]
-  ROOT --> DOCS[documents/]
+  ROOT[repo root] --> ASSETS[assets]
+  ROOT --> COMPONENTS[components]
+  ROOT --> DOCS[documents]
   ROOT --> INDEX[index.html]
   ROOT --> TODO[todo.md]
-  ROOT --> ARTIFORGE[.artiforge/]
-  ASSETS --> CSS[css/ (base.css, components.css, tokens.css)]
-  ASSETS --> JS[js/ (main.js, themer.js)]
+  ROOT --> ARTIFORGE[.artiforge]
+  ASSETS --> CSS[css: base.css, components.css, tokens.css]
+  ASSETS --> JS[js: main.js, themer.js]
   COMPONENTS --> CFILES[26 component HTML files]
   DOCS --> ANALYSIS[ANALYSIS.md]
   DOCS --> AT[ACCESSIBILITY-TESTING.md]
   DOCS --> CG[COMPONENTS-GUIDE.md]
-  ARTIFORGE --> PLANS[plans, reports]
+  ARTIFORGE --> PLANS[plans and reports]
 ```
 
 Top-level:
