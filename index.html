@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Components - WCAG 2.1 AA Design System</title>
+  
+  <!-- CSS Assets -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  
+  <style>
+    /* Landing Page Specific Styles */
+    .hero {
+      background: var(--c-primary-light);
+      color: var(--c-primary-dark);
+      padding: var(--space-16) 0;
+      text-align: center;
+      margin-bottom: var(--space-12);
+    }
+    
+    .hero h1 {
+      color: var(--c-primary);
+      margin-bottom: var(--space-4);
+    }
+    
+    .component-section {
+      margin-bottom: var(--space-16);
+      padding-top: var(--space-8);
+      border-top: 1px solid var(--c-gray-200);
+    }
+    
+    .component-demo {
+      background: var(--c-white);
+      border: 1px solid var(--c-gray-200);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+      margin: var(--space-6) 0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .code-snippet {
+      background: var(--c-gray-900);
+      color: var(--c-gray-100);
+      padding: var(--space-4);
+      border-radius: var(--radius-md);
+      overflow-x: auto;
+      font-family: var(--font-family-mono);
+      font-size: var(--fs-sm);
+    }
+
+    .token-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: var(--space-4);
+    }
+
+    .token-table th, .token-table td {
+      text-align: left;
+      padding: var(--space-2);
+      border-bottom: 1px solid var(--c-gray-200);
+    }
+    
+    .color-swatch {
+      display: inline-block;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      vertical-align: middle;
+      margin-right: var(--space-2);
+      border: 1px solid var(--c-gray-300);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- A.4 Skip Link -->
+  <a href="#main-content" class="skip-link">Vai al contenuto principale</a>
+
+  <header class="container">
+    <nav class="main-nav" aria-label="Menu principale">
+      <a href="#" class="nav-link" style="font-weight: 700; font-size: var(--fs-xl); color: var(--c-primary);">Accessibile.</a>
+      
+      <button class="mobile-menu-btn" aria-expanded="false" aria-controls="main-menu" aria-label="Menu">
+        ☰
+      </button>
+
+      <ul id="main-menu" class="nav-list">
+        <li><a href="#navigazione" class="nav-link">Navigazione</a></li>
+        <li><a href="#form" class="nav-link">Form</a></li>
+        <li><a href="#contenuto" class="nav-link">Contenuto</a></li>
+        <li><a href="#media" class="nav-link">Media</a></li>
+        <li><a href="#tokens" class="btn btn-primary">Documentazione</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Design System Accessibile</h1>
+        <p style="font-size: var(--fs-xl); max-width: 600px; margin: 0 auto;">
+          Una libreria di componenti framework-agnostic, progettata per la conformità WCAG 2.1 AA.
+          Moderna, leggera e pronta per l'uso.
+        </p>
+      </div>
+    </section>
+
+    <div class="container">
+      
+      <!-- A. Navigazione -->
+      <section id="navigazione" class="component-section">
+        <h2>A. Navigazione</h2>
+        <p>Componenti essenziali per l'orientamento dell'utente.</p>
+
+        <!-- Breadcrumbs -->
+        <div class="component-demo">
+          <h3>Breadcrumbs</h3>
+          <nav aria-label="Breadcrumb" class="breadcrumb">
+            <ol>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Documentazione</a></li>
+              <li><a href="#" aria-current="page">Componenti</a></li>
+            </ol>
+          </nav>
+        </div>
+
+        <!-- Tabs -->
+        <div class="component-demo">
+          <h3>Tabs Accessibili</h3>
+          <div class="tabs">
+            <div role="tablist" aria-label="Esempio Schede">
+              <button role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" class="tab-button">
+                HTML5
+              </button>
+              <button role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" class="tab-button" tabindex="-1">
+                CSS3
+              </button>
+              <button role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" class="tab-button" tabindex="-1">
+                JavaScript
+              </button>
+            </div>
+            <div id="panel-1" role="tabpanel" aria-labelledby="tab-1" class="tab-panel">
+              <p>HTML5 fornisce la struttura semantica necessaria per l'accessibilità.</p>
+            </div>
+            <div id="panel-2" role="tabpanel" aria-labelledby="tab-2" class="tab-panel" hidden>
+              <p>CSS3 gestisce l'aspetto visivo e le variabili (Tokens) per il theming.</p>
+            </div>
+            <div id="panel-3" role="tabpanel" aria-labelledby="tab-3" class="tab-panel" hidden>
+              <p>JavaScript aggiunge interattività accessibile (Focus management, ARIA states).</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- B. Forms -->
+      <section id="form" class="component-section">
+        <h2>B. Input & Form</h2>
+        <p>Elementi interattivi con stati di focus chiari e validazione semantica.</p>
+
+        <div class="component-demo">
+          <h3>Bottoni</h3>
+          <div style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
+            <button class="btn btn-primary">Primary Action</button>
+            <button class="btn btn-secondary">Secondary Action</button>
+            <button class="btn btn-outline">Outline Button</button>
+            <button class="btn btn-primary" disabled aria-disabled="true">Disabled</button>
+          </div>
+        </div>
+
+        <div class="component-demo">
+          <h3>Input Fields</h3>
+          <form onsubmit="event.preventDefault();">
+            <div class="form-group">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" id="username" class="form-input" placeholder="Inserisci il tuo nome">
+            </div>
+            
+            <div class="form-group">
+              <label for="email" class="form-label">Email (con errore simulato)</label>
+              <input type="email" id="email" class="form-input" aria-invalid="true" aria-describedby="email-error" value="email@sbagliata">
+              <span id="email-error" class="form-error">Inserisci un indirizzo email valido.</span>
+            </div>
+
+            <div class="form-group">
+              <p class="form-label">Preferenze</p>
+              
+              <label class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+                <span>Iscriviti alla newsletter</span>
+              </label>
+
+              <label class="custom-control custom-radio">
+                <input type="radio" name="theme" class="custom-control-input" checked>
+                <span class="custom-control-indicator"></span>
+                <span>Tema Chiaro</span>
+              </label>
+              
+              <label class="custom-control custom-radio">
+                <input type="radio" name="theme" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+                <span>Tema Scuro (Auto)</span>
+              </label>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- C. Contenuto -->
+      <section id="contenuto" class="component-section">
+        <h2>C. Contenuto & Feedback</h2>
+        
+        <!-- Accordion -->
+        <div class="component-demo">
+          <h3>Accordion</h3>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button aria-expanded="false" aria-controls="acc-content-1">
+                <span>Cos'è l'accessibilità web?</span>
+                <span class="accordion-icon">▼</span>
+              </button>
+            </h3>
+            <div id="acc-content-1" class="accordion-panel" hidden>
+              <p>L'accessibilità web (a11y) è la pratica inclusiva di rimuovere le barriere che impediscono l'interazione con, o l'accesso a, i siti web da parte di persone con disabilità.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button aria-expanded="false" aria-controls="acc-content-2">
+                <span>Quali sono i livelli WCAG?</span>
+                <span class="accordion-icon">▼</span>
+              </button>
+            </h3>
+            <div id="acc-content-2" class="accordion-panel" hidden>
+              <p>I livelli sono A (minimo), AA (standard legale/globale), e AAA (massimo). Questo sistema punta al livello AA.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="component-demo">
+          <h3>Modale Accessibile</h3>
+          <button class="btn btn-primary" data-modal-target="modal-example">Apri Modale</button>
+        </div>
+
+        <!-- Cards -->
+        <div class="component-demo">
+          <h3>Card Inclusiva</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4);">
+            <article class="card">
+              <h3 class="card-title"><a href="#">Articolo Interessante</a></h3>
+              <p>Questa intera card è cliccabile grazie al CSS, ma contiene solo un link semantico nel titolo.</p>
+            </article>
+            <article class="card">
+              <h3 class="card-title"><a href="#">Altro Argomento</a></h3>
+              <p>Supporta navigazione da tastiera e screen reader in modo naturale.</p>
+            </article>
+          </div>
+        </div>
+
+        <!-- Alerts -->
+        <div class="component-demo">
+          <h3>Alerts</h3>
+          <div class="alert alert-info" role="status">
+            <strong>Info:</strong> Questo è un messaggio informativo.
+          </div>
+          <div class="alert alert-success" role="status">
+            <strong>Successo:</strong> Operazione completata correttamente.
+          </div>
+          <div class="alert alert-error" role="alert">
+            <strong>Errore:</strong> Si è verificato un problema.
+          </div>
+        </div>
+      </section>
+
+      <!-- D. Media -->
+      <section id="media" class="component-section">
+        <h2>D. Media Avanzati</h2>
+        
+        <!-- Carousel -->
+        <div class="component-demo">
+          <h3>Carousel Accessibile</h3>
+          <div class="carousel" aria-roledescription="carousel" aria-label="Esempio Slider">
+            <div class="carousel-inner">
+              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="1 di 3">
+                <div style="height: 300px; background: var(--c-primary-light); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--c-primary-dark);">
+                  Slide 1
+                </div>
+              </div>
+              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 di 3" aria-hidden="true">
+                <div style="height: 300px; background: var(--c-secondary-light); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--c-secondary-dark);">
+                  Slide 2
+                </div>
+              </div>
+              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 di 3" aria-hidden="true">
+                <div style="height: 300px; background: #FED7AA; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #9A3412;">
+                  Slide 3
+                </div>
+              </div>
+            </div>
+            
+            <div class="carousel-controls">
+              <button class="carousel-btn" data-action="prev" aria-label="Slide Precedente">◀</button>
+              <button class="carousel-btn" data-action="play-pause" aria-label="Play Carousel">▶</button>
+              <button class="carousel-btn" data-action="next" aria-label="Slide Successiva">▶</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tokens Documentation -->
+      <section id="tokens" class="component-section">
+        <h2>Personalizzazione (Design Tokens)</h2>
+        <p>Il sistema è costruito su variabili CSS. Modifica <code>assets/css/tokens.css</code> per cambiare l'aspetto globale.</p>
+        
+        <table class="token-table">
+          <thead>
+            <tr>
+              <th>Token</th>
+              <th>Valore</th>
+              <th>Descrizione</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>--c-primary</code></td>
+              <td><span class="color-swatch" style="background: var(--c-primary)"></span> Indigo 600</td>
+              <td>Colore principale del brand e focus.</td>
+            </tr>
+            <tr>
+              <td><code>--c-secondary</code></td>
+              <td><span class="color-swatch" style="background: var(--c-secondary)"></span> Emerald 500</td>
+              <td>Colore secondario per azioni alternative.</td>
+            </tr>
+            <tr>
+              <td><code>--font-family-base</code></td>
+              <td>System UI</td>
+              <td>Font stack nativo veloce e leggibile.</td>
+            </tr>
+            <tr>
+              <td><code>--radius-md</code></td>
+              <td>0.375rem</td>
+              <td>Arrotondamento standard.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </div>
+  </main>
+
+  <footer style="background: var(--c-gray-900); color: var(--c-white); padding: var(--space-8) 0; margin-top: var(--space-16); text-align: center;">
+    <div class="container">
+      <p>&copy; 2025 Accessible Components. Rilasciato sotto licenza MIT.</p>
+    </div>
+  </footer>
+
+  <!-- Modal Markup (Hidden by default) -->
+  <div id="modal-example" class="modal-overlay" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <h2 id="modal-title">Esempio Modale</h2>
+      <p>Questa modale intrappola il focus al suo interno finché è aperta. Alla chiusura, il focus torna al bottone che l'ha aperta.</p>
+      <div class="form-group">
+        <label for="modal-input" class="form-label">Prova il focus:</label>
+        <input type="text" id="modal-input" class="form-input">
+      </div>
+      <div style="text-align: right; margin-top: var(--space-4);">
+        <button class="btn btn-secondary" data-modal-close>Chiudi</button>
+        <button class="btn btn-primary" data-modal-close>Salva</button>
+      </div>
+      <button class="modal-close-btn" data-modal-close aria-label="Chiudi Modale">×</button>
+    </div>
+  </div>
+
+  <!-- JS Logic -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+

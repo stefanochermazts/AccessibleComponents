@@ -1,0 +1,546 @@
+/* --- Components Styles --- */
+
+/* --- A. Navigation --- */
+
+/* A.1 Skip Link */
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--c-primary);
+  color: var(--c-white);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  z-index: 9999;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.skip-link:focus {
+  top: var(--space-4);
+}
+
+/* A.2 Breadcrumbs */
+.breadcrumb ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.breadcrumb li {
+  display: inline-flex;
+  align-items: center;
+  color: var(--c-gray-500);
+}
+
+.breadcrumb li:not(:last-child)::after {
+  content: "/";
+  margin: 0 var(--space-2);
+  color: var(--c-gray-400);
+}
+
+.breadcrumb a {
+  color: var(--c-gray-600);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--c-primary);
+  text-decoration: underline;
+}
+
+.breadcrumb [aria-current="page"] {
+  color: var(--c-gray-900);
+  font-weight: 600;
+}
+
+/* A.3 Tabs */
+.tabs {
+  margin-bottom: var(--space-8);
+}
+
+.tab-list {
+  display: flex;
+  border-bottom: 1px solid var(--c-gray-300);
+  margin-bottom: var(--space-4);
+  overflow-x: auto;
+}
+
+.tab-button {
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: var(--space-3) var(--space-6);
+  cursor: pointer;
+  font-size: var(--fs-base);
+  color: var(--c-gray-600);
+  font-weight: 500;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.tab-button:hover {
+  color: var(--c-primary);
+}
+
+.tab-button[aria-selected="true"] {
+  color: var(--c-primary);
+  border-bottom-color: var(--c-primary);
+}
+
+.tab-panel {
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.tab-panel:not([hidden]) {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* A.4 Main Navigation (Simple Responsive) */
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4) 0;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: var(--space-6);
+}
+
+.nav-link {
+  color: var(--c-gray-700);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: var(--c-primary);
+}
+
+.mobile-menu-btn {
+  display: none; /* Hidden on desktop */
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+    background: none;
+    border: none;
+    font-size: var(--fs-xl);
+    cursor: pointer;
+  }
+
+  .nav-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--c-white);
+    flex-direction: column;
+    padding: var(--space-4);
+    box-shadow: var(--shadow-lg);
+    z-index: 100;
+  }
+
+  .nav-list.is-open {
+    display: flex;
+  }
+}
+
+/* --- B. Forms --- */
+
+/* B.1 Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  border: 1px solid transparent;
+  font-size: var(--fs-base);
+  line-height: 1.5;
+}
+
+.btn-primary {
+  background-color: var(--c-primary);
+  color: var(--c-white);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--c-primary-dark);
+}
+
+.btn-secondary {
+  background-color: var(--c-secondary-light);
+  color: var(--c-secondary-dark);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: #A7F3D0; /* Custom hover for secondary */
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--c-gray-300);
+  color: var(--c-gray-700);
+}
+
+.btn-outline:hover:not(:disabled) {
+  border-color: var(--c-gray-400);
+  background-color: var(--c-gray-50);
+}
+
+.btn:disabled, .btn[aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none; /* If using aria-disabled="true", handle click prevention in JS or css pointer-events */
+}
+
+/* B.2 Inputs */
+.form-group {
+  margin-bottom: var(--space-4);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-weight: 500;
+  color: var(--c-gray-800);
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--c-gray-300);
+  border-radius: var(--radius-md);
+  font-size: var(--fs-base);
+  color: var(--c-gray-900);
+  background-color: var(--c-white);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:hover {
+  border-color: var(--c-gray-400);
+}
+
+.form-input:focus {
+  border-color: var(--c-primary);
+  box-shadow: 0 0 0 3px var(--c-primary-light);
+  outline: none;
+}
+
+.form-input[aria-invalid="true"] {
+  border-color: var(--c-error);
+}
+
+.form-input[aria-invalid="true"]:focus {
+  box-shadow: 0 0 0 3px var(--c-error-bg);
+}
+
+.form-error {
+  display: block;
+  color: var(--c-error);
+  font-size: var(--fs-sm);
+  margin-top: var(--space-1);
+}
+
+/* B.3 Custom Checkbox/Radio */
+.custom-control {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-2);
+  cursor: pointer;
+}
+
+.custom-control-input {
+  /* Visually hidden but focusable */
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.custom-control-indicator {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid var(--c-gray-400);
+  border-radius: var(--radius-sm);
+  margin-right: var(--space-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  background: var(--c-white);
+}
+
+.custom-radio .custom-control-indicator {
+  border-radius: 50%;
+}
+
+.custom-control-input:focus + .custom-control-indicator {
+  box-shadow: var(--focus-shadow);
+  border-color: var(--c-primary);
+}
+
+.custom-control-input:checked + .custom-control-indicator {
+  background-color: var(--c-primary);
+  border-color: var(--c-primary);
+  color: var(--c-white);
+}
+
+/* Checkmark / Dot */
+.custom-control-indicator::after {
+  content: "";
+  display: none;
+}
+
+.custom-checkbox .custom-control-input:checked + .custom-control-indicator::after {
+  content: "✓";
+  display: block;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.custom-radio .custom-control-input:checked + .custom-control-indicator::after {
+  content: "";
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--c-white);
+}
+
+/* --- C. Content --- */
+
+/* C.1 Accordion */
+.accordion-item {
+  border: 1px solid var(--c-gray-200);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-2);
+  overflow: hidden;
+}
+
+.accordion-header button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4);
+  background: var(--c-white);
+  border: none;
+  text-align: left;
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--c-gray-800);
+}
+
+.accordion-header button:hover {
+  background: var(--c-gray-50);
+}
+
+.accordion-header button[aria-expanded="true"] {
+  background: var(--c-primary-light);
+  color: var(--c-primary-dark);
+}
+
+.accordion-icon {
+  transition: transform 0.3s;
+}
+
+.accordion-header button[aria-expanded="true"] .accordion-icon {
+  transform: rotate(180deg);
+}
+
+.accordion-panel {
+  padding: var(--space-4);
+  background: var(--c-white);
+  border-top: 1px solid var(--c-gray-200);
+  display: none;
+}
+
+.accordion-panel:not([hidden]) {
+  display: block;
+}
+
+/* C.2 Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+}
+
+.modal-overlay[aria-hidden="false"] {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-dialog {
+  background: var(--c-white);
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 500px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  transform: translateY(-20px);
+  transition: transform 0.3s;
+}
+
+.modal-overlay[aria-hidden="false"] .modal-dialog {
+  transform: translateY(0);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--c-gray-500);
+}
+
+.modal-close-btn:hover {
+  color: var(--c-gray-900);
+}
+
+/* C.3 Cards */
+.card {
+  background: var(--c-white);
+  border: 1px solid var(--c-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.card-title a {
+  text-decoration: none;
+  color: var(--c-gray-900);
+}
+
+.card-title a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* C.4 Alerts */
+.alert {
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-4);
+  border-left: 4px solid transparent;
+}
+
+.alert-info {
+  background-color: var(--c-info-bg);
+  color: var(--c-info);
+  border-left-color: var(--c-info);
+}
+
+.alert-success {
+  background-color: var(--c-success-bg);
+  color: var(--c-success);
+  border-left-color: var(--c-success);
+}
+
+.alert-error {
+  background-color: var(--c-error-bg);
+  color: var(--c-error);
+  border-left-color: var(--c-error);
+}
+
+.alert-warning {
+  background-color: var(--c-warning-bg);
+  color: var(--c-warning);
+  border-left-color: var(--c-warning);
+}
+
+/* --- D. Media --- */
+
+/* D.1 Carousel */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-8);
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.carousel-slide img {
+  width: 100%;
+  display: block;
+}
+
+.carousel-controls {
+  position: absolute;
+  bottom: var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--space-2);
+  background: rgba(0, 0, 0, 0.5);
+  padding: var(--space-2);
+  border-radius: var(--radius-pill);
+}
+
+.carousel-btn {
+  background: transparent;
+  border: none;
+  color: var(--c-white);
+  cursor: pointer;
+  padding: var(--space-1);
+}
+
+.carousel-btn:hover {
+  color: var(--c-primary-light);
+}
+

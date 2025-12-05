@@ -1,0 +1,87 @@
+:root {
+  /* --- Color Palette (Pastel & Accessible) --- */
+  /* Primary Brand */
+  --c-primary: #4F46E5; /* Indigo 600 - High contrast */
+  --c-primary-light: #E0E7FF; /* Indigo 100 - Pastel background */
+  --c-primary-dark: #312E81; /* Indigo 900 */
+
+  /* Secondary Brand */
+  --c-secondary: #10B981; /* Emerald 500 */
+  --c-secondary-light: #D1FAE5; /* Emerald 100 */
+  --c-secondary-dark: #064E3B; /* Emerald 900 */
+
+  /* Neutrals */
+  --c-white: #FFFFFF;
+  --c-gray-50: #F9FAFB;
+  --c-gray-100: #F3F4F6;
+  --c-gray-200: #E5E7EB;
+  --c-gray-300: #D1D5DB;
+  --c-gray-400: #9CA3AF;
+  --c-gray-500: #6B7280;
+  --c-gray-600: #4B5563; /* Text on light bg */
+  --c-gray-700: #374151; /* Main text */
+  --c-gray-800: #1F2937;
+  --c-gray-900: #111827;
+
+  /* Semantic */
+  --c-success: #059669;
+  --c-success-bg: #ECFDF5;
+  --c-error: #DC2626;
+  --c-error-bg: #FEF2F2;
+  --c-warning: #D97706;
+  --c-warning-bg: #FFFBEB;
+  --c-info: #2563EB;
+  --c-info-bg: #EFF6FF;
+
+  /* --- Typography --- */
+  /* System UI Stack - No Google Fonts */
+  --font-family-base: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-family-mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+
+  --lh-base: 1.5;
+  --lh-heading: 1.2;
+
+  --fs-xs: 0.75rem;  /* 12px */
+  --fs-sm: 0.875rem; /* 14px */
+  --fs-base: 1rem;   /* 16px */
+  --fs-lg: 1.125rem; /* 18px */
+  --fs-xl: 1.25rem;  /* 20px */
+  --fs-2xl: 1.5rem;  /* 24px */
+  --fs-3xl: 1.875rem;/* 30px */
+  --fs-4xl: 2.25rem; /* 36px */
+
+  /* --- Spacing (4px grid) --- */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem;  /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem;    /* 16px */
+  --space-6: 1.5rem;  /* 24px */
+  --space-8: 2rem;    /* 32px */
+  --space-12: 3rem;   /* 48px */
+  --space-16: 4rem;   /* 64px */
+
+  /* --- Borders & Radius --- */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-pill: 9999px;
+  --radius-full: 50%;
+
+  /* --- Elevation (Shadows) --- */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  /* --- Accessibility Focus --- */
+  --focus-ring-color: var(--c-primary);
+  --focus-ring-width: 3px;
+  --focus-ring-offset: 2px;
+  --focus-shadow: 0 0 0 var(--focus-ring-offset) var(--c-white), 0 0 0 calc(var(--focus-ring-offset) + var(--focus-ring-width)) var(--focus-ring-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Simple dark mode support if needed, though not explicitly requested, good for modern feel */
+  /* Keeping it light-default for now as per 'pastel' request which usually implies light, 
+     but defining vars allows easy switch. */
+}
+
