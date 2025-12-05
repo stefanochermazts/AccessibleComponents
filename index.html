@@ -311,42 +311,14 @@
         </div>
       </section>
 
-      <!-- Tokens Documentation -->
+      <!-- Tokens Documentation / Themer -->
       <section id="tokens" class="component-section">
-        <h2>Personalizzazione (Design Tokens)</h2>
-        <p>Il sistema è costruito su variabili CSS. Modifica <code>assets/css/tokens.css</code> per cambiare l'aspetto globale.</p>
+        <h2>Theme Customizer & Contrast Check</h2>
+        <p>Customize the Design System variables in real-time. The Contrast Checker will automatically validate your color choices against WCAG AA standards.</p>
         
-        <table class="token-table">
-          <thead>
-            <tr>
-              <th>Token</th>
-              <th>Valore</th>
-              <th>Descrizione</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>--c-primary</code></td>
-              <td><span class="color-swatch" style="background: var(--c-primary)"></span> Indigo 600</td>
-              <td>Colore principale del brand e focus.</td>
-            </tr>
-            <tr>
-              <td><code>--c-secondary</code></td>
-              <td><span class="color-swatch" style="background: var(--c-secondary)"></span> Emerald 500</td>
-              <td>Colore secondario per azioni alternative.</td>
-            </tr>
-            <tr>
-              <td><code>--font-family-base</code></td>
-              <td>System UI</td>
-              <td>Font stack nativo veloce e leggibile.</td>
-            </tr>
-            <tr>
-              <td><code>--radius-md</code></td>
-              <td>0.375rem</td>
-              <td>Arrotondamento standard.</td>
-            </tr>
-          </tbody>
-        </table>
+        <div id="theme-editor-container">
+          <!-- Themer.js will inject content here -->
+        </div>
       </section>
 
     </div>
@@ -377,6 +349,7 @@
 
   <!-- JS Logic -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/themer.js"></script>
 </body>
 </html>
 
