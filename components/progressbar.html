@@ -1,0 +1,32 @@
+<!--
+  Component: Progressbar (Determinate)
+  Version: 1.0.0
+  Last Updated: 2025-12-06
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Deterministic progress indicator
+  
+  ARIA Pattern: Progressbar
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/progressbar/
+  
+  Keyboard Navigation:
+  - N/A (read-only status)
+  
+  Required ARIA Attributes:
+  - role="progressbar"
+  - aria-valuemin / aria-valuemax / aria-valuenow
+  
+  CSS Classes:
+  - .wcag-progressbar
+  - .progressbar-fill
+  - .progressbar-label
+  
+  Dependencies:
+  - CSS: assets/css/components.css (Progressbar styles)
+  - JS: assets/js/main.js (initProgressbars)
+-->
+<div class="wcag-progressbar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="25">
+  <div class="progressbar-fill"></div>
+</div>
+<span class="progressbar-label">25%</span>
+

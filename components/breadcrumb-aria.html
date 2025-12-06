@@ -1,0 +1,41 @@
+<!--
+  Component: Breadcrumb (ARIA variant)
+  Version: 1.0.0
+  Last Updated: 2025-12-06
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Navigation trail with aria-current and optional microdata
+  
+  ARIA Pattern: Breadcrumb
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/
+  
+  Keyboard Navigation:
+  - Standard links
+  
+  Required ARIA Attributes:
+  - aria-label on nav
+  - aria-current="page" on current item
+  
+  CSS Classes:
+  - .breadcrumb-aria
+  
+  Dependencies:
+  - CSS: assets/css/components.css (Breadcrumb ARIA styles)
+-->
+<nav aria-label="Breadcrumb">
+  <ol class="breadcrumb-aria" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="#" itemprop="item"><span itemprop="name">Home</span></a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="#" itemprop="item"><span itemprop="name">Components</span></a>
+      <meta itemprop="position" content="2" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+      <a href="#" itemprop="item"><span itemprop="name">Menu Button</span></a>
+      <meta itemprop="position" content="3" />
+    </li>
+  </ol>
+</nav>
+

@@ -1,0 +1,34 @@
+<!--
+  Component: Radio Group (APG)
+  Version: 1.0.0
+  Last Updated: 2025-12-06
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Exclusive choice group using arrow key navigation
+  
+  ARIA Pattern: Radio Group
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/radio/
+  
+  Keyboard Navigation:
+  - Arrow Left/Right/Up/Down: Move selection
+  - Home/End: First/last option
+  - Space/Enter: Activate focused option
+  
+  Required ARIA Attributes:
+  - role="radiogroup" on container
+  - role="radio" on each option
+  - aria-checked true/false on options
+  
+  CSS Classes:
+  - .wcag-radiogroup: Container
+  
+  Dependencies:
+  - CSS: assets/css/components.css (Radio group styles)
+  - JS: assets/js/main.js (initRadioGroups)
+-->
+<div class="wcag-radiogroup" role="radiogroup" aria-label="Theme">
+  <div role="radio" aria-checked="true" tabindex="0">Light</div>
+  <div role="radio" aria-checked="false" tabindex="-1">Dark</div>
+  <div role="radio" aria-checked="false" tabindex="-1">Auto</div>
+</div>
+

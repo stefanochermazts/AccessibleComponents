@@ -1,0 +1,53 @@
+<!--
+  Component: Menubar (APG)
+  Version: 1.0.0
+  Last Updated: 2025-12-06
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Horizontal application-style menu with submenus
+  
+  ARIA Pattern: Menubar
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/menubar/
+  
+  Keyboard Navigation:
+  - F10/Alt (handled by UA), Arrow Left/Right: Move between top items
+  - Arrow Down: Open submenu and focus first item
+  - Arrow Up/Down: Navigate submenu
+  - Esc: Close submenu
+  - Home/End: First/last root item
+  
+  Required ARIA Attributes:
+  - role="menubar" container
+  - role="menuitem" items
+  - aria-haspopup/aria-expanded on items with submenu
+  - role="menu" for submenus
+  
+  CSS Classes:
+  - .wcag-menubar: Wrapper
+  
+  Dependencies:
+  - CSS: assets/css/components.css (Menubar styles)
+  - JS: assets/js/main.js (initMenubars)
+-->
+<ul class="wcag-menubar" role="menubar" aria-label="Main menu">
+  <li>
+    <button type="button" role="menuitem" aria-haspopup="true" aria-expanded="false">File</button>
+    <ul role="menu" hidden>
+      <li><button role="menuitem" type="button">New</button></li>
+      <li><button role="menuitem" type="button">Open…</button></li>
+      <li><button role="menuitem" type="button">Save</button></li>
+    </ul>
+  </li>
+  <li>
+    <button type="button" role="menuitem" aria-haspopup="true" aria-expanded="false">Edit</button>
+    <ul role="menu" hidden>
+      <li><button role="menuitem" type="button">Undo</button></li>
+      <li><button role="menuitem" type="button">Redo</button></li>
+      <li><button role="menuitem" type="button">Copy</button></li>
+    </ul>
+  </li>
+  <li>
+    <button type="button" role="menuitem">Help</button>
+  </li>
+</ul>
+

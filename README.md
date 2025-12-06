@@ -1,5 +1,5 @@
 # Accessible Components – WCAG 2.1 AA Design System
-Framework‑agnostic, accessible UI components (26) with HTML5, CSS3, Vanilla JS (ES6+), WCAG 2.1 AA, and WAI‑ARIA APG patterns.  
+Framework‑agnostic, accessible UI components (37) with HTML5, CSS3, Vanilla JS (ES6+), WCAG 2.1 AA, and WAI‑ARIA APG patterns.  
 [Live Demo](https://accessible.chermaz.com/) • [WCAG 2.1](https://www.w3.org/WAI/WCAG21/quickref/) • [ARIA APG](https://www.w3.org/WAI/ARIA/apg/)
 
 ---
@@ -8,7 +8,7 @@ Framework‑agnostic, accessible UI components (26) with HTML5, CSS3, Vanilla JS
 - [Overview](#overview)
 - [Project Structure](#project-structure)
 - [Technology Stack](#technology-stack)
-- [Components (26)](#components-26)
+- [Components (37)](#components-37)
 - [How to Use the Components](#how-to-use-the-components)
 - [Styling & Theming](#styling--theming)
 - [Accessibility](#accessibility)
@@ -20,7 +20,7 @@ Framework‑agnostic, accessible UI components (26) with HTML5, CSS3, Vanilla JS
 ---
 
 ## Overview
-Accessible, reusable components with full keyboard support, correct ARIA, and design tokens. The live demo (`index.html`) shows all 26 components; each component has a dedicated HTML snippet in `components/`.
+Accessible, reusable components with full keyboard support, correct ARIA, and design tokens. The live demo (`index.html`) shows all 37 components; each component has a dedicated HTML snippet in `components/`.
 
 ---
 
@@ -35,7 +35,7 @@ graph TD
   ROOT --> ARTIFORGE[.artiforge]
   ASSETS --> CSS[css: base.css, components.css, tokens.css]
   ASSETS --> JS[js: main.js, themer.js]
-  COMPONENTS --> CFILES[26 component HTML files]
+  COMPONENTS --> CFILES[37 component HTML files]
   DOCS --> ANALYSIS[ANALYSIS.md]
   DOCS --> AT[ACCESSIBILITY-TESTING.md]
   DOCS --> CG[COMPONENTS-GUIDE.md]
@@ -45,7 +45,7 @@ graph TD
 Top-level:
 - `assets/css/`: `base.css`, `components.css`, `tokens.css`
 - `assets/js/`: `main.js`, `themer.js`
-- `components/`: 26 HTML reference snippets (one per component)
+- `components/`: 37 HTML reference snippets (one per component)
 - `documents/`: ANALYSIS, ACCESSIBILITY-TESTING, COMPONENTS-GUIDE
 - `index.html`: Live demo (all components)
 - `todo.md`: Tasks
@@ -61,7 +61,7 @@ Top-level:
 
 ---
 
-## Components (26)
+## Components (37)
 
 ### A. Navigation (4)
 - Skip Link (`skip-link.html`)
@@ -74,10 +74,11 @@ Top-level:
 - Input Fields (`input.html`)
 - Custom Checkbox/Radio (`checkbox-radio.html`)
 
-### C. Content & Feedback (4)
+### C. Content & Feedback (5)
 - Accordion (`accordion.html`)
 - Modal (`modal.html`)
 - Cards (`cards.html`)
+- Image Card (`image-card.html`)
 - Alerts (`alerts.html`)
 
 ### D. Media (1)
@@ -98,6 +99,31 @@ Top-level:
 - Treegrid (`treegrid.html`)
 - Feed (`feed.html`)
 - Window Splitter (`splitter.html`)
+
+### F. APG Additional Patterns (10)
+- Menu Button (`menu-button.html`)
+- Menubar (`menubar.html`)
+- Switch (`switch.html`)
+- Progressbar (`progressbar.html`)
+- Radio Group (`radio-group.html`)
+- Alertdialog (`alertdialog.html`)
+- Language Menu Button (`language-menu.html`)
+- Toast / Status (`toast.html`)
+- Breadcrumb ARIA variant (`breadcrumb-aria.html`)
+- Pagination (`pagination.html`)
+
+---
+
+## Notes on the Additional APG Patterns (Batch 3)
+- **Menu Button / Menubar**: `aria-haspopup="menu"` + `aria-expanded`; open with Enter/Space/↓, navigate with ↑/↓, close with Esc or outside click; menubar uses ←/→ at root.  
+- **Switch**: `role="switch"` + `aria-checked`; toggle with Space/Enter; `.is-on` class handles visuals.  
+- **Progressbar**: `role="progressbar"` with `aria-valuenow|min|max`; `.progressbar-fill` width reflects the percentage; optional buttons demo increments/reset.  
+- **Radio Group**: `role="radiogroup"` + `role="radio"`; roving tabindex; arrows/Home/End move focus, Space/Enter selects.  
+- **Alertdialog**: `role="alertdialog"` + `aria-modal="true"`; focus trap, Esc closes, focus returns to trigger.  
+- **Language Menu**: Menu-button pattern; `aria-pressed` on selected language; dispatches `languageChange`.  
+- **Toast / Status**: Uses `role="status"` or `role="alert"`; auto-dismiss and capped list; triggered via `data-toast-*`.  
+- **Breadcrumb ARIA**: `aria-current="page"` on the current link; microdata for SEO.  
+- **Pagination**: `aria-label` on nav and controls; `aria-current` on active page; prev/next disabled at edges; keyboard arrows/Home/End supported.
 
 ---
 

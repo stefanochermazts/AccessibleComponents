@@ -1,0 +1,42 @@
+<!--
+  Component: Menu Button (APG)
+  Version: 1.0.0
+  Last Updated: 2025-12-06
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Contextual command menu triggered by a button
+  
+  ARIA Pattern: Menu Button
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/
+  
+  Keyboard Navigation:
+  - Enter/Space/↓: Open menu and focus first item
+  - ↑/↓: Move between items
+  - Esc/Tab: Close menu and return focus
+  - Home/End: First/last item
+  
+  Required ARIA Attributes:
+  - aria-haspopup="menu", aria-expanded on trigger
+  - role="menu" on popup
+  - role="menuitem" on items
+  
+  CSS Classes:
+  - .wcag-menu-button: Wrapper
+  - .menu-button-trigger: Trigger button
+  - .menu-button-menu: Menu list
+  
+  Dependencies:
+  - CSS: assets/css/components.css (Menu Button styles)
+  - JS: assets/js/main.js (initMenuButtons)
+-->
+<div class="wcag-menu-button">
+  <button type="button" class="menu-button-trigger" aria-haspopup="menu" aria-expanded="false">
+    Actions
+  </button>
+  <ul class="menu-button-menu" role="menu" hidden>
+    <li><button role="menuitem" type="button">Edit</button></li>
+    <li><button role="menuitem" type="button">Duplicate</button></li>
+    <li><button role="menuitem" type="button">Archive</button></li>
+  </ul>
+</div>
+

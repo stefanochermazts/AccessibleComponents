@@ -1,0 +1,32 @@
+<!--
+  Component: Switch (Toggle)
+  Version: 1.0.0
+  Last Updated: 2025-12-06
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: On/Off control using role="switch" pattern
+  
+  ARIA Pattern: Switch
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/switch/
+  
+  Keyboard Navigation:
+  - Space/Enter: Toggle state
+  
+  Required ARIA Attributes:
+  - role="switch"
+  - aria-checked: true/false
+  
+  CSS Classes:
+  - .wcag-switch: Wrapper
+  
+  Dependencies:
+  - CSS: assets/css/components.css (Switch styles)
+  - JS: assets/js/main.js (initSwitches)
+-->
+<div class="wcag-switch">
+  <button type="button" role="switch" aria-checked="false" aria-label="Enable notifications">
+    Off
+  </button>
+  <span>Enable notifications</span>
+</div>
+

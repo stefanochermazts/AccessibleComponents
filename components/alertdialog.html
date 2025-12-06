@@ -1,0 +1,41 @@
+<!--
+  Component: Alertdialog (Critical modal)
+  Version: 1.0.0
+  Last Updated: 2025-12-06
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Blocking critical message with assertive announcement
+  
+  ARIA Pattern: Alertdialog
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/alertdialog/
+  
+  Keyboard Navigation:
+  - Tab/Shift+Tab: Cycle focus inside dialog
+  - Esc: Close dialog
+  
+  Required ARIA Attributes:
+  - role="alertdialog"
+  - aria-modal="true"
+  - aria-labelledby / aria-describedby
+  
+  CSS Classes:
+  - .alertdialog-overlay
+  - .alertdialog
+  
+  Dependencies:
+  - CSS: assets/css/components.css (Alertdialog styles)
+  - JS: assets/js/main.js (initAlertdialogs)
+-->
+<button class="btn btn-error" data-alertdialog-target="alertdialog-demo">Delete item</button>
+
+<div id="alertdialog-demo" class="alertdialog-overlay" aria-hidden="true">
+  <div class="alertdialog" role="alertdialog" aria-modal="true" aria-labelledby="alertdialog-title" aria-describedby="alertdialog-desc">
+    <h3 id="alertdialog-title">Delete this item?</h3>
+    <p id="alertdialog-desc">This action cannot be undone. Please confirm.</p>
+    <div class="alertdialog-actions">
+      <button class="btn btn-secondary" data-alertdialog-close>Cancel</button>
+      <button class="btn btn-primary" data-alertdialog-close>Confirm</button>
+    </div>
+  </div>
+</div>
+

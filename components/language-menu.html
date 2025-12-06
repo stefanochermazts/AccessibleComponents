@@ -1,0 +1,41 @@
+<!--
+  Component: Language Menu Button
+  Version: 1.0.0
+  Last Updated: 2025-12-06
+  WCAG: 2.1 AA Compliant
+  
+  Purpose: Language switcher using menu button pattern
+  
+  ARIA Pattern: Menu Button
+  Reference: https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/
+  
+  Keyboard Navigation:
+  - Enter/Space/↓: Open menu and focus first item
+  - ↑/↓: Navigate items
+  - Esc/Tab: Close menu, return focus
+  
+  Required ARIA Attributes:
+  - aria-haspopup="menu" / aria-expanded on trigger
+  - role="menu" on popup
+  - role="menuitem" + aria-pressed for current language
+  
+  CSS Classes:
+  - .wcag-language-menu
+  - .language-menu-trigger
+  - .language-menu-popup
+  
+  Dependencies:
+  - CSS: assets/css/components.css (Language menu styles)
+  - JS: assets/js/main.js (initLanguageMenus)
+-->
+<div class="wcag-language-menu">
+  <button type="button" class="language-menu-trigger" aria-haspopup="menu" aria-expanded="false" data-current-lang="en">
+    English
+  </button>
+  <ul class="language-menu-popup" role="menu" hidden>
+    <li><button role="menuitem" type="button" data-lang="en" aria-pressed="true">English</button></li>
+    <li><button role="menuitem" type="button" data-lang="it" aria-pressed="false">Italiano</button></li>
+    <li><button role="menuitem" type="button" data-lang="es" aria-pressed="false">Español</button></li>
+  </ul>
+</div>
+

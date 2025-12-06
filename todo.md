@@ -4,7 +4,7 @@
 - [x] Setup project structure and CSS Design System (tokens.css, base.css)
 - [x] Implement Navigation Components (Menu, Breadcrumbs, Tabs, Skip Link)
 - [x] Implement Form Components (Buttons, Inputs, Checkbox/Radio)
-- [x] Implement Content Components (Accordion, Modal, Cards, Alerts)
+- [x] Implement Content Components (Accordion, Modal, Cards, Alerts, Image Card)
 - [x] Implement Media Components (Carousel)
 - [x] Create modern index.html showcase with documentation
 - [x] Implement Design System Export (ZIP download with CSS/JSON)
@@ -29,6 +29,18 @@
 - [x] Treegrid (Markup, CSS, JS, Demo in index.html)
 - [x] Feed (Markup, CSS, JS, Demo in index.html)
 - [x] Window Splitter (Markup, CSS, JS, Demo in index.html)
+
+### Batch 3 - Additional APG Patterns - Completato ✅ (2025-12-06)
+- [x] Menu Button (Markup, CSS, JS, Demo in index.html)
+- [x] Menubar (Markup, CSS, JS, Demo in index.html)
+- [x] Switch (Markup, CSS, JS, Demo in index.html)
+- [x] Progressbar (Markup, CSS, JS, Demo in index.html)
+- [x] Radio Group (Markup, CSS, JS, Demo in index.html)
+- [x] Alertdialog (Markup, CSS, JS, Demo in index.html)
+- [x] Language Menu Button (Markup, CSS, JS, Demo in index.html)
+- [x] Toast / Status (Markup, CSS, JS, Demo in index.html)
+- [x] Breadcrumb ARIA variant (Markup, CSS, JS, Demo in index.html)
+- [x] Pagination (Markup, CSS, JS, Demo in index.html)
 
 ## Documentazione e Testing
 - [x] Guida Test di Accessibilità (ACCESSIBILITY-TESTING.md)
@@ -57,7 +69,7 @@
 - [x] **Aggiornamento documentazione** (README.md, structure)
 
 **Stato Architettura:** 
-- ✅ 26/26 componenti con file dedicati in `components/` (100%)
+- ✅ 37/37 componenti con file dedicati in `components/` (100%)
 - ✅ Consistenza completa: HTML, CSS, JS separati
 - ✅ Documentazione inline completa su ogni file
 - ✅ Naming convention standardizzato (kebab-case)
@@ -65,4 +77,4 @@
 ## Note
 Il file `index.html` contiene la demo completa e la documentazione dei token.
 I file CSS e JS si trovano nella cartella `assets/`.
-**Tutti i 26 componenti** hanno ora file HTML di riferimento in `components/` con documentazione completa.
+**Tutti i 37 componenti** hanno ora file HTML di riferimento in `components/` con documentazione completa.
